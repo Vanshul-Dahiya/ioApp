@@ -1,0 +1,7 @@
+{
+  "name": "ioApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
