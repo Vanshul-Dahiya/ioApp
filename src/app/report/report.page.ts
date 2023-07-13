@@ -11,5 +11,7 @@ export class ReportPage implements OnInit {
 
   ngOnInit() {
   }
-
+  selectedOption: string | undefined;
+  xyz:string | undefined;
+  abc:string | undefined;
 }
