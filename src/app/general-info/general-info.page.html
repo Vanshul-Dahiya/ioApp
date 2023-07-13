@@ -1,13 +1,53 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>generalInfo</ion-title>
+  <ion-toolbar class="claim" color="secondary">
+    <ion-title class="claimForm-title">General Info</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">generalInfo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <h1 class="form-heading"></h1>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Institute name /institute id: Sankaralingam Bhuwaneswari College of
+        Pharmacy Anaikuttam Via Sivakasi Viruthunagar Dist/
+        PCI-1882</ion-card-title
+      >
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>College:</ion-label>
+        <ion-label class="center"
+          >Sankaralingam Bhuwaneswari College of Pharmacy Anaikuttam Via
+          Sivakasi Viruthunagar Dist/ PCI-1882
+        </ion-label>
+      </div>
+      <div class="labels-container">
+        <ion-label>ADDRESS:</ion-label>
+        <ion-label class="center">ADDRESS 123</ion-label>
+      </div>
+      <div class="labels-container">
+        <ion-label>State:</ion-label>
+        <ion-label class="center">UP</ion-label>
+      </div>
+      <div class="labels-container">
+        <ion-label>PCI ID:</ion-label>
+        <ion-label class="center" >PCI-001</ion-label>
+      </div>
+      <div class="labels-container">
+        <ion-label>COURSES:</ion-label>
+        <ion-label class="center" >D Pharm/B Pharm</ion-label>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-button class="custom-button">SUBMIT</ion-button>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/pending-dashboard"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
