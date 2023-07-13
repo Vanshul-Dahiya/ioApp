@@ -15,6 +15,30 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
+  {
+    path: 'report',
+    loadChildren: () => import('./report/report.module').then( m => m.ReportPageModule)
+  },
+  {
+    path: 'pending-list',
+    loadChildren: () => import('./pending-list/pending-list.module').then( m => m.PendingListPageModule)
+  },
+  {
+    path: 'inspection-list',
+    loadChildren: () => import('./inspection-list/inspection-list.module').then( m => m.InspectionListPageModule)
+  },
+  {
+    path: 'inspection-dashboard',
+    loadChildren: () => import('./inspection-dashboard/inspection-dashboard.module').then( m => m.InspectionDashboardPageModule)
+  },
+  {
+    path: 'pending-dashboard',
+    loadChildren: () => import('./pending-dashboard/pending-dashboard.module').then( m => m.PendingDashboardPageModule)
+  },
+  {
+    path: 'claim-form',
+    loadChildren: () => import('./claim-form/claim-form.module').then( m => m.ClaimFormPageModule)
+  },
 ];
 
 @NgModule({
