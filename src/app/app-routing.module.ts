@@ -38,11 +38,16 @@ const routes: Routes = [
   {
     path: 'claim-form',
     loadChildren: () => import('./claim-form/claim-form.module').then( m => m.ClaimFormPageModule)
-  },  {
+  },
+  {
     path: 'travelallowance',
     loadChildren: () => import('./travelallowance/travelallowance.module').then( m => m.TravelallowancePageModule)
   },
 
+  {
+    path: 'general-info',
+    loadChildren: () => import('./general-info/general-info.module').then( m => m.GeneralInfoPageModule)
+  },
 ];
 
 @NgModule({

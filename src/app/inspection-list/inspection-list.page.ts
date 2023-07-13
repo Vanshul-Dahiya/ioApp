@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inspection-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InspectionListPage implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
-
+  navigate(index : number){
+    switch(index){
+      case 0: 
+      this.router.navigate(['']);
+      break;
+      case 1: 
+      this.router.navigate(['/inspection-dashboard']);
+      break;
+      default:
+        alert(`Page not found ${index}`);
+    }
+    console.log(`${index}`);
+  }
 }
