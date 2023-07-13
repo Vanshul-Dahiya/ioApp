@@ -1,5 +1,77 @@
 .travelallowance {
     text-align: center;
     font-weight: bold;
-    
+  }
+  
+  .form-heading {
+    text-align: center;
+    font-weight: bold;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .labels-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Add this line */
+    margin-bottom: 0.5rem;
+  }
+  .labels-container1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Add this line */
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid;
+  }
+  
+  
+  .center1{
+    margin-left: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid black;
+  }
+  .center1{
+    margin-left: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .select-no-underline {
+    --highlight-color-focused: transparent;
+    --border-style-focused: none;
+    --border-color-focused: transparent;
+  }
+  .custom-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin-left: 8.5rem;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .center {
+      margin-left: 5.5rem;
+    }
+    .custom-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      margin-left: 8.5rem;
+    }
+    .center1{
+      margin-left: 2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }

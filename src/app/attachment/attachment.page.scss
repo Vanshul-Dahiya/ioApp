@@ -1,0 +1,23 @@
+.attachment-title {
+    text-align: center;
+    font-weight: bold;
+  }
+  .form-heading {
+    text-align: center;
+    font-weight: bold;
+  }
+  .center{
+    margin-left: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .labels-container1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Add this line */
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid;
+  }
+  

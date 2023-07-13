@@ -11,5 +11,8 @@ export class TravelallowancePage implements OnInit {
 
   ngOnInit() {
   }
-
+  abc:string | undefined;
+  xyz:string | undefined;
+  selectedOption: string | undefined;
+  lxa:string | undefined;
 }

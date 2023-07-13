@@ -48,6 +48,14 @@ const routes: Routes = [
     path: 'general-info',
     loadChildren: () => import('./general-info/general-info.module').then( m => m.GeneralInfoPageModule)
   },
+  {
+    path: 'attachment',
+    loadChildren: () => import('./attachment/attachment.module').then( m => m.AttachmentPageModule)
+  },
+  {
+    path: 'table',
+    loadChildren: () => import('./table/table.module').then( m => m.TablePageModule)
+  },
 ];
 
 @NgModule({
