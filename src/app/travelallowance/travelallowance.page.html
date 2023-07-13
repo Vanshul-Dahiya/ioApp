@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <h1 class="form-heading">Source onward Journey</h1>
   <ion-card>
     <div class="labels-container">
@@ -14,49 +14,56 @@
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
       <ion-item>
-        <ion-datetime-button class="center1"datetime="datetime"></ion-datetime-button>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime"
+        ></ion-datetime-button>
 
-       <ion-modal [keepContentsMounted]="true">
-      <ng-template>
-       <ion-datetime id="datetime"></ion-datetime>
-           </ng-template>
-          </ion-modal>
-       
-         </ion-item>
-        </div>
-        <div class="labels-container">
-          <ion-label>Arrival Station :</ion-label>
-          <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
-        </div>
-        <div class="labels-container">
-          <ion-label>Date and time :</ion-label>
-          <ion-item>
-            <ion-datetime-button class="center1"datetime="datetime"></ion-datetime-button>
-    
-           <ion-modal [keepContentsMounted]="true">
+        <ion-modal [keepContentsMounted]="true">
           <ng-template>
-           <ion-datetime id="datetime"></ion-datetime>
-               </ng-template>
-              </ion-modal>
-           
-             </ion-item>
-            </div>
-            <div class="labels-container">
-              <ion-label>Mode of Journey :</ion-label>
-              <ion-item>
-                <!-- <ion-label class="center">Service/Retired:</ion-label> -->
-                  <ion-select class="center"[(ngModel)]="selectedOption" class="select-no-underline">
-                    <ion-select-option value="Option 1">BUS</ion-select-option>
-                    <ion-select-option value="Option 2">FLIGHT</ion-select-option>
-                    <ion-select-option value="Option 2">TRAIN</ion-select-option>
-                  </ion-select>
-              </ion-item>
-            </div>
-            <div class="labels-container">
-              <ion-label>Fair (Rs.):</ion-label>
-              <ion-input class="center1" [(ngModel)]="lxa"></ion-input>
-            </div>
-    
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Arrival Station :</ion-label>
+      <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
+    </div>
+    <div class="labels-container">
+      <ion-label>Date and time :</ion-label>
+      <ion-item>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime"
+        ></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Mode of Journey :</ion-label>
+      <ion-item>
+        <!-- <ion-label class="center">Service/Retired:</ion-label> -->
+        <ion-select
+          class="center"
+          [(ngModel)]="selectedOption"
+          class="select-no-underline"
+        >
+          <ion-select-option value="Option 1">BUS</ion-select-option>
+          <ion-select-option value="Option 2">FLIGHT</ion-select-option>
+          <ion-select-option value="Option 2">TRAIN</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Fair (Rs.):</ion-label>
+      <ion-input class="center1" [(ngModel)]="lxa"></ion-input>
+    </div>
   </ion-card>
   <h1 class="form-heading">Destination return Journey</h1>
   <ion-card>
@@ -67,53 +74,67 @@
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
       <ion-item>
-        <ion-datetime-button class="center1"datetime="datetime"></ion-datetime-button>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime"
+        ></ion-datetime-button>
 
-       <ion-modal [keepContentsMounted]="true">
-      <ng-template>
-       <ion-datetime id="datetime"></ion-datetime>
-           </ng-template>
-          </ion-modal>
-       
-         </ion-item>
-        </div>
-        <div class="labels-container">
-          <ion-label>Arrival Station :</ion-label>
-          <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
-        </div>
-        <div class="labels-container">
-          <ion-label>Date and time :</ion-label>
-          <ion-item>
-            <ion-datetime-button class="center1"datetime="datetime"></ion-datetime-button>
-    
-           <ion-modal [keepContentsMounted]="true">
+        <ion-modal [keepContentsMounted]="true">
           <ng-template>
-           <ion-datetime id="datetime"></ion-datetime>
-               </ng-template>
-              </ion-modal>
-           
-             </ion-item>
-            </div>
-            <div class="labels-container">
-              <ion-label>Mode of Journey :</ion-label>
-              <ion-item>
-                <!-- <ion-label class="center">Service/Retired:</ion-label> -->
-                  <ion-select class="center"[(ngModel)]="selectedOption" class="select-no-underline">
-                    <ion-select-option value="Option 1">BUS</ion-select-option>
-                    <ion-select-option value="Option 2">FLIGHT</ion-select-option>
-                    <ion-select-option value="Option 2">TRAIN</ion-select-option>
-                  </ion-select>
-              </ion-item>
-            </div>
-            <div class="labels-container">
-              <ion-label>Fair (Rs.):</ion-label>
-              <ion-input class="center1" [(ngModel)]="lxa"></ion-input>
-            </div>
-            <div class="labels-container">
-              <ion-label>Total sum:</ion-label>
-              <ion-label class="center1" ></ion-label>
-            </div>
-    
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Arrival Station :</ion-label>
+      <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
+    </div>
+    <div class="labels-container">
+      <ion-label>Date and time :</ion-label>
+      <ion-item>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime"
+        ></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Mode of Journey :</ion-label>
+      <ion-item>
+        <!-- <ion-label class="center">Service/Retired:</ion-label> -->
+        <ion-select
+          class="center"
+          [(ngModel)]="selectedOption"
+          class="select-no-underline"
+        >
+          <ion-select-option value="Option 1">BUS</ion-select-option>
+          <ion-select-option value="Option 2">FLIGHT</ion-select-option>
+          <ion-select-option value="Option 2">TRAIN</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Fair (Rs.):</ion-label>
+      <ion-input class="center1" [(ngModel)]="lxa"></ion-input>
+    </div>
+    <div class="labels-container">
+      <ion-label>Total sum:</ion-label>
+      <ion-label class="center1"></ion-label>
+    </div>
   </ion-card>
-  <ion-button class="custom-button">SUBMIT</ion-button>
+  <ion-button class="custom-button" (click)="navigate()">SUBMIT</ion-button>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/claim-form"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

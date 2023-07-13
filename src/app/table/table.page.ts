@@ -35,7 +35,7 @@ export class TablePage implements OnInit {
   
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
   
   displayedColumns: string[] = ['course', 'yesNo', 'ifYes', 'inspectorRemark'];

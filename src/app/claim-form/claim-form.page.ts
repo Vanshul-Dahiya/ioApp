@@ -16,6 +16,6 @@ export class ClaimFormPage implements OnInit {
   xyz:string | undefined;
   abc:string | undefined;
  navigate(){
-  this.router.navigate(['travelallowance'])
+  this.router.navigate(['/travelallowance'])
  }
 }
