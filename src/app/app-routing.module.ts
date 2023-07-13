@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'claim-form',
     loadChildren: () => import('./claim-form/claim-form.module').then( m => m.ClaimFormPageModule)
   },
+  {
+    path: 'general-info',
+    loadChildren: () => import('./general-info/general-info.module').then( m => m.GeneralInfoPageModule)
+  },
 ];
 
 @NgModule({
