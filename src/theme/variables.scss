@@ -74,6 +74,13 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** light background  **/
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
+
+  --ion-text-color: #000000;
+  --ion-text-color-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,6 +88,15 @@
    * Dark Colors
    * -------------------------------------------
    */
+   :root {
+    --ion-background-color: #c89e9e;
+    --ion-background-color-rgb: 34, 34, 34;
+
+    --ion-text-color: #db2b2b;
+    --ion-text-color-rgb: 255, 255, 255;
+
+    /* Update other color variables for dark theme */
+  }
 
   body {
     --ion-color-primary: #428cff;

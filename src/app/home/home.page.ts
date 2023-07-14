@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   constructor(private router :Router) {}
-  ngOnInit(){
+  ionViewDidEnter(){
     setTimeout(()=>{
       this.router.navigate(['dashboard'])
     },2000)
