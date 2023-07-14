@@ -1,77 +1,132 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>TABLE</ion-title>
+  <ion-toolbar class="claim" color="secondary">
+    <ion-title class="claimForm-title" style="text-align: center;">Statuary Documents</ion-title>
   </ion-toolbar>
 </ion-header>
+<h6 style="word-wrap: break-word;text-align: center;word-spacing: 1px; word-break: break-all;" > Institute name /institute id: Sankaralingam Bhuwaneswari College of
+  Pharmacy Anaikuttam Via Sivakasi Viruthunagar Dist/ PCI-1882</h6>
 
-<ion-content fullscreen>
-  <h1>Statuary Documents</h1>
-  <div class="header">
-    <span
-      >Institute name /institute id: Sankaralingam Bhuwaneswari College of
-      Pharmacy Anaikuttam Via Sivakasi Viruthunagar Dist/ PCI-1882</span
-    >
-  </div>
-  <div class="table-container">
-    <ion-grid>
-      <ion-row class="table">
-        <ion-col>Course</ion-col>
-        <ion-col>Yes/No</ion-col>
-        <ion-col>if yes enclose letter</ion-col>
-        <ion-col>Image</ion-col>
-        <ion-col>Inspector Remark</ion-col>
-      </ion-row>
-      <ng-container *ngFor="let element of dataSource">
-        <ion-row>
-          <ion-col>{{ element.course }}</ion-col>
-          <ion-col>
-            <ion-checkbox [checked]="element.checkbox"></ion-checkbox>
-          </ion-col>
-          <ion-col>
-            <ion-button (click)="takePicture()">Camera</ion-button>
-          </ion-col>
-          <ion-col>
-            <img [src]="getPhoto()" alt="pic" style="width: 400ppx" />
-          </ion-col>
-          <ion-col>
-            <ion-select [(ngModel)]="element.selectOption">
-              <ion-select-option value="option0" disabled
-                >Select</ion-select-option
-              >
-              <ion-select-option value="option1">Verified</ion-select-option>
-              <ion-select-option value="option2"
-                >Not Available</ion-select-option
-              >
-              <ion-select-option value="option3"
-                >Available but not able to Verify</ion-select-option
-              >
-              <ion-select-option value="option4">Doubtful</ion-select-option>
-            </ion-select>
-          </ion-col>
-        </ion-row>
-      </ng-container>
-    </ion-grid>
-  </div>
-
-  <button class="submit-btn" (click)="submitTableData()">Submit</button>
-  <button class="submit-btn" (click)="getTableData()">Get</button>
-
-  <table class="separate-table">
-    <thead>
-      <tr>
-        <th>Course</th>
-        <th>Checkbox</th>
-        <th>Select Option</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let element of separateDataSource">
-        <td>{{ element.course }}</td>
-        <td>{{ element.checkbox }}</td>
-        <td>{{ element.selectOption }}</td>
-      </tr>
-    </tbody>
-  </table>
+<ion-content color="light">
+  <ion-card>
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label>course: </ion-label>
+        <ion-label class="center">Bpharm</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>yes/no:</ion-label>
+        <ion-select
+          class="center"
+          [(ngModel)]="selectedOption"
+          class="select-no-underline"
+        >
+          <ion-select-option value="Option 1">yes</ion-select-option>
+          <ion-select-option value="Option 2">no</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>enclose:</ion-label>
+        <ion-button (click)="takePicture()">Camera</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label>image:</ion-label>
+        <img
+          [src]="getPhoto()"
+          alt="pic"
+          style="width: 100ppx; height: 100px"
+        />
+      </ion-item>
+      <ion-item>
+        <ion-label>remarks:</ion-label>
+        <ion-select [(ngModel)]="selectedOption2" class="select-no-underline">
+          <ion-select-option value="Option 1">Verified</ion-select-option>
+          <ion-select-option value="Option 2">Not Available</ion-select-option>
+          <ion-select-option value="Option 3">Available,Not Verified</ion-select-option>
+          <ion-select-option value="Option 4">Doubtful</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label>course: </ion-label>
+        <ion-label class="center">Bpharm</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>yes/no:</ion-label>
+        <ion-select
+          class="center"
+          [(ngModel)]="selectedOption"
+          class="select-no-underline"
+        >
+          <ion-select-option value="Option 1">yes</ion-select-option>
+          <ion-select-option value="Option 2">no</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>enclose:</ion-label>
+        <ion-button (click)="takePicture()">Camera</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label>image:</ion-label>
+        <img
+          [src]="getPhoto()"
+          alt="pic"
+          style="width: 100ppx; height: 100px"
+        />
+      </ion-item>
+      <ion-item>
+        <ion-label>remarks:</ion-label>
+        <ion-select [(ngModel)]="selectedOption2" class="select-no-underline">
+          <ion-select-option value="Option 1">Verified</ion-select-option>
+          <ion-select-option value="Option 2">Not Available</ion-select-option>
+          <ion-select-option value="Option 3">Available,Not Verified</ion-select-option>
+          <ion-select-option value="Option 4">Doubtful</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-label>course: </ion-label>
+        <ion-label class="center">Bpharm</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>yes/no:</ion-label>
+        <ion-select
+          class="center"
+          [(ngModel)]="selectedOption"
+          class="select-no-underline"
+        >
+          <ion-select-option value="Option 1">yes</ion-select-option>
+          <ion-select-option value="Option 2">no</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>enclose:</ion-label>
+        <ion-button (click)="takePicture()">Camera</ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-label>image:</ion-label>
+        <img
+          [src]="getPhoto()"
+          alt="pic"
+          style="width: 100ppx; height: 100px"
+        />
+      </ion-item>
+      <ion-item>
+        <ion-label>remarks:</ion-label>
+        <ion-select [(ngModel)]="selectedOption2" class="select-no-underline">
+          <ion-select-option value="Option 1">Verified</ion-select-option>
+          <ion-select-option value="Option 2">Not Available</ion-select-option>
+          <ion-select-option value="Option 3">Available,Not Verified</ion-select-option>
+          <ion-select-option value="Option 4">Doubtful</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>
 
 <ion-footer>

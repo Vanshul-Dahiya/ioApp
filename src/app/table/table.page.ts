@@ -21,7 +21,8 @@ export interface PeriodicElement {
   styleUrls: ['./table.page.scss'],
 })
 export class TablePage implements OnInit {
-
+  selectedOption : any;
+  selectedOption2 : any;
   imageSource:any;
   form: FormGroup;
   dataSource: PeriodicElement[] | undefined = [];
