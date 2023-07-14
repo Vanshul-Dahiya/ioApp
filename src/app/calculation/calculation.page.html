@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="claim" color="secondary">
+    <ion-title class="claimForm-title">Calculation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>A. Travelling allowance B/F (Total of A):</ion-label>
+        <ion-label class="center">XXXX FIXED</ion-label>
+      </div>
+    </ion-card-content>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>B. Daily Allowance XXXXX days @ Rs XXXXXX :</ion-label>
+        <ion-label class="center">Rs XXXXX Input</ion-label>
+      </div>
+    </ion-card-content>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>C. TOTAL (A+B) :</ion-label>
+        <ion-label class="center">Rs XXXX FIXED</ion-label>
+      </div>
+    </ion-card-content>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>D. Honorarium (applicable only for Inspectors, PCI) :</ion-label>
+        <ion-label class="center">Rs XXXXXX input</ion-label>
+      </div>
+    </ion-card-content>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>E. Incognito Fees applicable only in case of surprise :</ion-label>
+        <ion-label class="center">Rs XXXXXX input Inspection (verification of complaint/ compliance)</ion-label>
+      </div>
+    </ion-card-content>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>F. Incognito Fees applicable only in case of surprise :</ion-label>
+        <ion-label class="center">Rs XXXXXX input Inspection (verification of complaint/ compliance)</ion-label>
+      </div>
+    </ion-card-content>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>G. Advance if any :</ion-label>
+        <ion-label class="center">Rs XXXXXX FIXED</ion-label>
+      </div>
+    </ion-card-content>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>H. Balance (F –H) :</ion-label>
+        <ion-label class="center">Rs XXXXXX FIXED</ion-label>
+      </div>
+    </ion-card-content>
+  </ion-card>
+ 
+    <h1 class="form-heading">DECLARATION/UNDERTAKING </h1>
+    <ion-card>
+      <ion-card-content class="content-container">
+        <div class="labels-container">
+          <ion-label>I have actually travelled by the mode and class and T.A. has been claimed accordingly. I will perform the journey by mode and class for which I have been paid advance by the PCI. I have not claimed TA/DA or any other allowance for this journey from any other source. I was not provided free lodging, Boarding, Conveyance at the cost of Government/University or an Autonomous Body. Particulars given in the bill are true and correct.</ion-label>
+        </div>
+      </ion-card-content>  
+      <div class="labels-container">
+        <ion-label>Name:</ion-label>
+        <ion-label class="center">abc </ion-label>
+      </div>  
+      <div class="labels-container">
+        <ion-label>Address :</ion-label>
+        <ion-label class="center">Address 123 </ion-label>
+      </div>
+      <div class="labels-container">
+        <ion-label>Date and time :</ion-label>
+        <ion-item>
+          <ion-datetime-button class="center1"datetime="datetime"></ion-datetime-button>
+  
+         <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+         <ion-datetime id="datetime"></ion-datetime>
+             </ng-template>
+            </ion-modal>
+         
+           </ion-item>
+          </div>
+
+</ion-card>
+<ion-button class="custom-button">SUBMIT</ion-button>
+</ion-content>

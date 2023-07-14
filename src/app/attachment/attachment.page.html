@@ -6,10 +6,11 @@
 
 
 <ion-content>
-  
+
   <div class="labels-container">
-    <ion-label>Mode of Travel onward journey :</ion-label>
     <ion-item>
+      <h4>Mode of Travel onward journey :</h4>
+
       <!-- <ion-label class="center">Service/Retired:</ion-label> -->
       <ion-select [(ngModel)]="selectedOption" class="select-no-underline">
         <ion-select-option value="Option 1">BUS</ion-select-option>
@@ -19,5 +20,67 @@
     </ion-item>
   </div>
   <ion-card>
+    <ion-item>
+      <div class="labels-container1">
+        <ion-label>TicketUpload:</ion-label>
+        <div class="file-upload-container">
+          <ion-label class="file-upload-label"></ion-label>
+          <input type="file" (change)="onFileSelected($event)">
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="labels-container1">
+        <ion-label>Bill Upload :</ion-label>
+        <div class="file-upload-container">
+          <ion-label class="file-upload-label"></ion-label>
+          <input type="file" (change)="onFileSelected($event)">
+        </div>
+      </div>
+    </ion-item>
   </ion-card>
-  </ion-content>
+  <ion-content>
+
+    <div class="labels-container">
+      <ion-item>
+        <h4>Mode of Travel return  journey :</h4>
+  
+        <!-- <ion-label class="center">Service/Retired:</ion-label> -->
+        <ion-select [(ngModel)]="selectedOption" class="select-no-underline">
+          <ion-select-option value="Option 1">BUS</ion-select-option>
+          <ion-select-option value="Option 2">TRAIN</ion-select-option>
+          <ion-select-option value="Option 3">FLIGHT</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <ion-card>
+      <ion-item>
+        <div class="labels-container1">
+          <ion-label>TicketUpload:</ion-label>
+          <div class="file-upload-container">
+            <ion-label class="file-upload-label"></ion-label>
+            <input type="file" (change)="onFileSelected($event)">
+          </div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="labels-container1">
+          <ion-label>Bill Upload :</ion-label>
+          <div class="file-upload-container">
+            <ion-label class="file-upload-label"></ion-label>
+            <input type="file" (change)="onFileSelected($event)">
+          </div>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="labels-container1">
+          <ion-label>Other Uploads :</ion-label>
+          <div class="file-upload-container">
+            <ion-label class="file-upload-label"></ion-label>
+            <input type="file" (change)="onFileSelected($event)">
+          </div>
+        </div>
+      </ion-item>
+    </ion-card>
+    <ion-button class="custom-button">SUBMIT</ion-button>
+</ion-content>
