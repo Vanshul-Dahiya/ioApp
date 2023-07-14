@@ -1,0 +1,26 @@
+[
+    {
+        "instituteType": "existing",
+        "collegeName": "KM Clg ",
+        "coInspectorName": "Dr. Abdul kalam",
+        "coInspectorEmail": "abdulK@gmail.com"
+    },
+    {
+        "instituteType": "existing",
+        "collegeName": "Serikaralingam College ",
+        "coInspectorName": "Dr. Cherukuri ",
+        "coInspectorEmail": "chrk@gmail.com"
+    },
+    {
+        "instituteType": "existing",
+        "collegeName": "SGT Clg",
+        "coInspectorName": "Dr. Cherukuri ",
+        "coInspectorEmail": "chrk@gmail.com"
+    },
+    {
+        "instituteType": "imaginary",
+        "collegeName": "AIIMS",
+        "coInspectorName": "Dr. BOss ",
+        "coInspectorEmail": "boss@gmail.com"
+    }
+]

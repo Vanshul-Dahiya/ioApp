@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,8 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./inspection-dashboard.page.scss'],
 })
 export class InspectionDashboardPage implements OnInit {
-
-  constructor(private router : Router) { }
+  constructor(private router : Router,private http : HttpClient) { }
+  gridConfig: any[] = [];
+  data = this.http.get<any>('../../assets/dashboard_data.json').subscribe((data) => {
+    this.gridConfig = data;
+  });
 
   ngOnInit() {
   }

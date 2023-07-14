@@ -7,7 +7,7 @@
         </ion-button>
       </ion-menu-toggle>
     </ion-buttons>
-    <ion-title></ion-title>
+    <ion-title>Inspection </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-menu slot="start" side="start" contentId="main-content">
@@ -46,105 +46,33 @@
 </ion-menu>
 <ion-content [fullscreen]="true" id="main-content">
   <ion-header>
-    <ion-toolbar>
+    <!-- <ion-toolbar>
       <ion-title style="text-align: center; margin-top: 10px"
         >Inspection</ion-title
       >
-    </ion-toolbar>
+    </ion-toolbar> -->
   </ion-header>
   <ion-grid>
     <ion-list>
-      <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              <ion-label (click)="navigate(1)">General Info</ion-label>
-              <ion-icon name="information-circle"></ion-icon>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label> Institution type : Existing </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              <ion-label (click)="navigate(2)">Statutory Documents</ion-label>
-              <ion-icon name="document-text"></ion-icon>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label> Institution type : Existing </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              <ion-label (click)="navigate(2)">Faculty Details</ion-label>
-              <ion-icon name="person"></ion-icon>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label> Institution type : Existing </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              <ion-label (click)="navigate(2)">Infrastructure</ion-label>
-              <ion-icon name="business-sharp"></ion-icon>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label> Institution type : Existing </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              <ion-label (click)="navigate(2)">Equipment</ion-label>
-              <ion-icon name="flask-sharp"></ion-icon>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label> Institution type : Existing </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              <ion-label (click)="navigate(2)">Library</ion-label>
-              <ion-icon name="library"></ion-icon>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label> Institution type : Existing </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size-lg="6" size-md="6" size-sm="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              <ion-label (click)="navigate(3)">Digital Sign</ion-label>
-              <ion-icon name="finger-print-sharp"></ion-icon>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-label> Institution type : Existing </ion-label>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
+      <ion-col
+      *ngFor="let item of gridConfig; let i = index"
+      size="6"
+      size-lg="4"
+      size-md="4"
+      size-sm="6"
+    >
+      <ion-card class="grid-item" (click)="navigate(item.id)">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-label>{{item.name}}</ion-label>
+            <ion-icon [name]="item.image"></ion-icon>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-label>Status : {{item.status}}</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
     </ion-list>
   </ion-grid>
 </ion-content>

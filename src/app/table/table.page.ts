@@ -5,6 +5,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import {CameraPhoto, CameraResultType , CameraSource }  from '@capacitor/camera';
 import { FilesystemDirectory}  from '@capacitor/filesystem';
 import { DomSanitizer } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 const { Camera , Filesystem } = Plugins;
 
 export interface PeriodicElement {
@@ -12,12 +13,7 @@ export interface PeriodicElement {
   checkbox: boolean;
   selectOption: string;
   image: any | undefined;
-}
-const ELEMENT_DATA: PeriodicElement[] = [
-  { course: 'B.Pharma', checkbox: false, selectOption: '',image: undefined},
-  { course: 'M.Phil', checkbox: false, selectOption: '',image: undefined},
-  { course: 'M.Pharma', checkbox: false, selectOption: '',image: undefined},
-];
+} 
 
 @Component({
   selector: 'app-table',
@@ -28,18 +24,29 @@ export class TablePage implements OnInit {
 
   imageSource:any;
   form: FormGroup;
-  constructor(private route : ActivatedRoute , private domSanitizer:DomSanitizer){
+  dataSource: PeriodicElement[] | undefined = [];
+  constructor(private route : ActivatedRoute , private domSanitizer:DomSanitizer,private http : HttpClient){
     this.form = new FormGroup({
       image: new FormControl('')
     });
   
   }
   ngOnInit(): void {
+    this.getData()
     // throw new Error('Method not implemented.');
   }
-  
+  async getData() {
+    try {
+      const data = await this.http.get<PeriodicElement[]>('../../assets/data.json').subscribe(data => {
+        this.dataSource = data;
+      })
+      // this.dataSource = data;
+    } catch (error) {
+      console.error('Error retrieving data:', error);
+    }
+  }
   displayedColumns: string[] = ['course', 'yesNo', 'ifYes', 'inspectorRemark'];
-  dataSource = ELEMENT_DATA;
+
   separateDataSource: PeriodicElement[] = [];
   
   photoData: string | undefined;
@@ -64,11 +71,11 @@ export class TablePage implements OnInit {
     return this.imageSource;
     
   }
-  updateCheckboxValue(event: Event, index: number) {
-    const target = event.target as HTMLInputElement;
-    this.dataSource[index].checkbox = target.checked;
-    // this.dataSource[index].checkbox = checked;
-  }
+  // updateCheckboxValue(event: Event, index: number) {
+  //   const target = event.target as HTMLInputElement;
+  //   this.dataSource[index].checkbox = target.checked ;
+  //   // this.dataSource[index].checkbox = checked;
+  // }
   
   submitTableData(){
     localStorage.setItem('tableData', JSON.stringify(this.dataSource));

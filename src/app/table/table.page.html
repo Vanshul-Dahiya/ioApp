@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>TABLE</ion-title>
   </ion-toolbar>
@@ -7,21 +7,22 @@
 <ion-content fullscreen>
   <h1>Statuary Documents</h1>
   <div class="header">
-    <span>Institute name /institute id: Sankaralingam Bhuwaneswari College of Pharmacy Anaikuttam Via Sivakasi Viruthunagar Dist/ PCI-1882</span>
+    <span
+      >Institute name /institute id: Sankaralingam Bhuwaneswari College of
+      Pharmacy Anaikuttam Via Sivakasi Viruthunagar Dist/ PCI-1882</span
+    >
   </div>
-
   <div class="table-container">
     <ion-grid>
-      <ion-row class="table-header">
+      <ion-row class="table">
         <ion-col>Course</ion-col>
         <ion-col>Yes/No</ion-col>
         <ion-col>if yes enclose letter</ion-col>
         <ion-col>Image</ion-col>
         <ion-col>Inspector Remark</ion-col>
       </ion-row>
-
       <ng-container *ngFor="let element of dataSource">
-        <ion-row class="table-row">
+        <ion-row>
           <ion-col>{{ element.course }}</ion-col>
           <ion-col>
             <ion-checkbox [checked]="element.checkbox"></ion-checkbox>
@@ -34,10 +35,16 @@
           </ion-col>
           <ion-col>
             <ion-select [(ngModel)]="element.selectOption">
-              <ion-select-option value="option0" disabled>Select</ion-select-option>
+              <ion-select-option value="option0" disabled
+                >Select</ion-select-option
+              >
               <ion-select-option value="option1">Verified</ion-select-option>
-              <ion-select-option value="option2">Not Available</ion-select-option>
-              <ion-select-option value="option3">Available but not able to Verify</ion-select-option>
+              <ion-select-option value="option2"
+                >Not Available</ion-select-option
+              >
+              <ion-select-option value="option3"
+                >Available but not able to Verify</ion-select-option
+              >
               <ion-select-option value="option4">Doubtful</ion-select-option>
             </ion-select>
           </ion-col>
