@@ -21,8 +21,8 @@ export class InspectionDashboardPage implements OnInit {
       this.router.navigate(['/general-info']);
       break;
       case 2:       
-      // this.router.navigate(['/inspection-dashboard']);
-      alert('Coming soon')
+      this.router.navigate(['/table']);
+      // alert('Coming soon')
       break;
       default:
         alert(`Page not found ${index}`);

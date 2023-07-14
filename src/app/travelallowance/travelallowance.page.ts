@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-travelallowance',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./travelallowance.page.scss'],
 })
 export class TravelallowancePage implements OnInit {
-
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
@@ -15,4 +15,8 @@ export class TravelallowancePage implements OnInit {
   xyz:string | undefined;
   selectedOption: string | undefined;
   lxa:string | undefined;
+
+  navigate(){
+    this.router.navigate(['/attachment'])
+  }
 }

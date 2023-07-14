@@ -13,85 +13,83 @@
       <ion-card-subtitle></ion-card-subtitle>
     </ion-card-header> -->
 
-    
+      <ion-card-content class="content-container">
+        <div class="labels-container">
+          <ion-label>Name:</ion-label>
+          <ion-label class="center">abc </ion-label>
+        </div>
+        <div class="labels-container">
+          <ion-label>Designation:</ion-label>
+          <ion-label class="center">xyz</ion-label>
+        </div>
+        <div class="labels-container">
+          <ion-label>In service or retired:</ion-label>
+          <ion-item>
+            <!-- <ion-label class="center">Service/Retired:</ion-label> -->
+            <ion-select
+              [(ngModel)]="selectedOption"
+              class="select-no-underline"
+            >
+              <ion-select-option value="Option 1">Service</ion-select-option>
+              <ion-select-option value="Option 2">Retired</ion-select-option>
+            </ion-select>
+            <ion-select
+              [(ngModel)]="selectedOption"
+              class="select-no-underline"
+            >
+              <ion-select-option value="Option 1">Service</ion-select-option>
+              <ion-select-option value="Option 2">Retired</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+        <div class="labels-container">
+          <ion-label>BasicPay:</ion-label>
+          <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
+        </div>
+        <div class="labels-container">
+          <ion-label>Declared income :</ion-label>
+          <ion-input class="center1" [(ngModel)]="abc"></ion-input>
+        </div>
+        <div class="labels-container">
+          <ion-label>Purpose of Journey :</ion-label>
+          <ion-item>
+            <!-- <ion-label class="center">Service/Retired:</ion-label> -->
+            <ion-select
+              [(ngModel)]="selectedOption"
+              class="select-no-underline"
+            >
+              <ion-select-option value="Option 1">Meeting</ion-select-option>
+              <ion-select-option value="Option 2">Inspection</ion-select-option>
+            </ion-select>
+            <ion-select
+              [(ngModel)]="selectedOption"
+              class="select-no-underline"
+            >
+              <ion-select-option value="Option 1">Meeting</ion-select-option>
+              <ion-select-option value="Option 2">Inspection</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+        <div class="labels-container">
+          <ion-label>Dates of Event:</ion-label>
+          <ion-item>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
-    <ion-card-content class="content-container">
-      <div class="labels-container">
-        <ion-label>Name:</ion-label>
-        <ion-label class="center">abc </ion-label>
-      </div>
-      <div class="labels-container">
-        <ion-label>Designation:</ion-label>
-        <ion-label class="center">xyz</ion-label>
-      </div>
-      <div class="labels-container">
-        <ion-label>In service or retired:</ion-label>
-        <ion-item>
-          <!-- <ion-label class="center">Service/Retired:</ion-label> -->
-          <ion-select [(ngModel)]="selectedOption" class="select-no-underline">
-            <ion-select-option value="Option 1">Service</ion-select-option>
-            <ion-select-option value="Option 2">Retired</ion-select-option>
-          </ion-select>
-          <ion-select [(ngModel)]="selectedOption" class="select-no-underline">
-            <ion-select-option value="Option 1">Service</ion-select-option>
-            <ion-select-option value="Option 2">Retired</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </div>
-      <div class="labels-container">
-        <ion-label>BasicPay:</ion-label>
-        <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
-      </div>
-      <div class="labels-container">
-        <ion-label>Declared income :</ion-label>
-        <ion-input class="center1" [(ngModel)]="abc"></ion-input>
-      </div>
-      <div class="labels-container">
-        <ion-label>Purpose of Journey :</ion-label>
-        <ion-item>
-          <!-- <ion-label class="center">Service/Retired:</ion-label> -->
-          <ion-select [(ngModel)]="selectedOption" class="select-no-underline">
-            <ion-select-option value="Option 1">Meeting</ion-select-option>
-            <ion-select-option value="Option 2">Inspection</ion-select-option>
-          </ion-select>
-          <ion-select [(ngModel)]="selectedOption" class="select-no-underline">
-            <ion-select-option value="Option 1">Meeting</ion-select-option>
-            <ion-select-option value="Option 2">Inspection</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </div>
-      <div class="labels-container">
-        <ion-label>Dates of Event:</ion-label>
-        <ion-item>
-          <ion-datetime-button datetime="datetime"></ion-datetime-button>
-
-<ion-modal [keepContentsMounted]="true">
-  <ng-template>
-    <ion-datetime id="datetime"></ion-datetime>
-  </ng-template>
-</ion-modal>
-         
-        </ion-item>
-
-
-
-
-
-
-
-      </div>
-
-
-
-    </ion-card-content>
-  </ion-card>
-  <ion-button class="custom-button">SUBMIT</ion-button>
-
-</ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-back-button defaultHref="/dashboard" ></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime id="datetime"></ion-datetime>
+              </ng-template>
+            </ion-modal>
+          </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-button class="custom-button" (click)="navigate()">SUBMIT</ion-button>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="/dashboard"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar> </ion-footer
+></ion-content>
