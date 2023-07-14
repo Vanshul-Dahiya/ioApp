@@ -1,27 +1,14 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+img{
+  position: fixed;
+  left: calc(50% - 230px / 2 - 0.5px);
+  top: calc(50% - 268px / 2 - 77px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

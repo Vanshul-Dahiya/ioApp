@@ -4,18 +4,17 @@
   </ion-toolbar>
 </ion-header> -->
 
-
 <body>
   <ion-content [fullscreen]="true">
-<h1>Statuary Documents</h1>
-<div class="header">
-  <span>
-    Institute name /institute id: Sankaralingam Bhuwaneswari College of
-    Pharmacy Anaikuttam Via Sivakasi Viruthunagar Dist/ PCI-1882
-  </span>
-</div>
+    <h1>Statuary Documents</h1>
+    <div class="header">
+      <span>
+        Institute name /institute id: Sankaralingam Bhuwaneswari College of
+        Pharmacy Anaikuttam Via Sivakasi Viruthunagar Dist/ PCI-1882
+      </span>
+    </div>
 
-<!-- 
+    <!-- 
 <div class="container">
   <div class="table-responsive">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -66,69 +65,68 @@
     </table>
   </div>
 </div> -->
-<body>
-  <div class="table-container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Course </th>
-          <th>yes/no</th>
-          <th>enclose</th>
-          <th>Image</th>
-          <th>Remarks</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let element of dataSource; let i = index">
-          <td data-label="Course">{{ element.course }}</td>
-          <td data-label="Yes/No">
-            <input
-              type="checkbox"
-              [checked]="element.checkbox"
-              (change)="updateCheckboxValue($event, i)"
-            />
-          </td>
-          <td data-label="Enclose">
-            <!-- <button (click)="capturePhoto()">Capture Photo</button> -->
-           <ion-button (click)="takePicture()">Camera</ion-button>
-           
-          </td>
-          <td data-label="Image">
-            <!-- <img src="{{imageSource}}" style="width: 400px;" > -->
-            <img [src]="getPhoto()" alt="pic" style="width: 400ppx;">
-          </td>
-          <td data-label="Remarks">
-            <select [(ngModel)]="element.selectOption">
-              <option value="option1">Verified</option>
-              <option value="option2">Not Available</option>
-              <option value="option3">Avail, not verified</option>
-              <option value="option4">Doubtful</option>
-            </select>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button class="submit-btn" (click)="submitTableData()">Submit</button>
-    <button class="submit-btn" (click)="getTableData()">Get</button>
-  </div>
-  <table class="separate-table">
-    <thead>
-      <tr>
-        <th>Course</th>
-        <th>Checkbox</th>
-        <th>Select Option</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let element of separateDataSource">
-        <td>{{ element.course }}</td>
-        <td>{{ element.checkbox }}</td>
-        <td>{{ element.selectOption }}</td>
-      </tr>
-    </tbody>
-  </table>
-</body>
-</ion-content>
+    <body>
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>yes/no</th>
+              <th>enclose</th>
+              <th>Image</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let element of dataSource; let i = index">
+              <td data-label="Course">{{ element.course }}</td>
+              <td data-label="Yes/No">
+                <input
+                  type="checkbox"
+                  [checked]="element.checkbox"
+                  (change)="updateCheckboxValue($event, i)"
+                />
+              </td>
+              <td data-label="Enclose">
+                <!-- <button (click)="capturePhoto()">Capture Photo</button> -->
+                <ion-button (click)="takePicture()">Camera</ion-button>
+              </td>
+              <td data-label="Image">
+                <!-- <img src="{{imageSource}}" style="width: 400px;" > -->
+                <img [src]="getPhoto()" alt="pic" style="width: 400ppx" />
+              </td>
+              <td data-label="Remarks">
+                <select [(ngModel)]="element.selectOption">
+                  <option value="option1">Verified</option>
+                  <option value="option2">Not Available</option>
+                  <option value="option3">Avail, not verified</option>
+                  <option value="option4">Doubtful</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="submit-btn" (click)="submitTableData()">Submit</button>
+        <button class="submit-btn" (click)="getTableData()">Get</button>
+      </div>
+      <table class="separate-table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Checkbox</th>
+            <th>Select Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let element of separateDataSource">
+            <td>{{ element.course }}</td>
+            <td>{{ element.checkbox }}</td>
+            <td>{{ element.selectOption }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </body>
+  </ion-content>
 </body>
 <ion-footer>
   <ion-toolbar>

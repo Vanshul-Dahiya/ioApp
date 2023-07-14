@@ -13,7 +13,6 @@ export class HomePage {
     setTimeout(()=>{
       this.router.navigate(['dashboard'])
     },2000)
-
   }
 
 }

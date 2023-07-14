@@ -1,12 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="claim" color="secondary">
-    <ion-title class="attachment-title ">Attachment</ion-title>
+    <ion-title class="attachment-title">Attachment</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-
   <div class="labels-container">
     <ion-item>
       <h4>Mode of Travel onward journey :</h4>
@@ -25,7 +23,7 @@
         <ion-label>TicketUpload:</ion-label>
         <div class="file-upload-container">
           <ion-label class="file-upload-label"></ion-label>
-          <input type="file" (change)="onFileSelected($event)">
+          <input type="file" (change)="onFileSelected($event)" />
         </div>
       </div>
     </ion-item>
@@ -34,17 +32,16 @@
         <ion-label>Bill Upload :</ion-label>
         <div class="file-upload-container">
           <ion-label class="file-upload-label"></ion-label>
-          <input type="file" (change)="onFileSelected($event)">
+          <input type="file" (change)="onFileSelected($event)" />
         </div>
       </div>
     </ion-item>
   </ion-card>
   <ion-content>
-
     <div class="labels-container">
       <ion-item>
-        <h4>Mode of Travel return  journey :</h4>
-  
+        <h4>Mode of Travel return journey :</h4>
+
         <!-- <ion-label class="center">Service/Retired:</ion-label> -->
         <ion-select [(ngModel)]="selectedOption" class="select-no-underline">
           <ion-select-option value="Option 1">BUS</ion-select-option>
@@ -59,7 +56,7 @@
           <ion-label>TicketUpload:</ion-label>
           <div class="file-upload-container">
             <ion-label class="file-upload-label"></ion-label>
-            <input type="file" (change)="onFileSelected($event)">
+            <input type="file" (change)="onFileSelected($event)" />
           </div>
         </div>
       </ion-item>
@@ -68,7 +65,7 @@
           <ion-label>Bill Upload :</ion-label>
           <div class="file-upload-container">
             <ion-label class="file-upload-label"></ion-label>
-            <input type="file" (change)="onFileSelected($event)">
+            <input type="file" (change)="onFileSelected($event)" />
           </div>
         </div>
       </ion-item>
@@ -77,17 +74,17 @@
           <ion-label>Other Uploads :</ion-label>
           <div class="file-upload-container">
             <ion-label class="file-upload-label"></ion-label>
-            <input type="file" (change)="onFileSelected($event)">
+            <input type="file" (change)="onFileSelected($event)" />
           </div>
         </div>
       </ion-item>
     </ion-card>
     <ion-button class="custom-button" (click)="navigate()">SUBMIT</ion-button>
-</ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar> </ion-footer
+></ion-content>
