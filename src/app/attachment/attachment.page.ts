@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-attachment',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttachmentPage implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
@@ -17,5 +18,8 @@ export class AttachmentPage implements OnInit {
     const file: File = event.target.files[0];
     console.log(file);
     // Perform further actions with the selected file
+  }
+  navigate(){
+    this.router.navigate(['/calculation']);
   }
 }

@@ -12,4 +12,7 @@ export class CalculationPage implements OnInit {
   ngOnInit() {
   }
 
+  btnClick(){
+    alert('Form Submitted!')
+  }
 }
