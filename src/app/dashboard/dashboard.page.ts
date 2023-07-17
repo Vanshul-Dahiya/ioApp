@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,12 +9,16 @@ import { Router } from '@angular/router';
 })
 export class DashboardPage implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router,private menuCtrl : MenuController) { }
 
   ngOnInit() {
     // alert('page')
     console.log('Dashboard page')
   }
+  ionViewWillEnter() {
+    this.menuCtrl.enable(true,'main-menu');
+  }
+  
   onSubmit(){
     this.router.navigate(['/home' ])
   }
