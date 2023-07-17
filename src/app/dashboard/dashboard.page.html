@@ -18,21 +18,39 @@
   <ion-content>
     <ion-list>
       <!-- Add your menu items here -->
-      <ion-item (click)="navigate(0)">
+      <ion-item id="open-toast" (click)="navigate(0)">
+        <ion-toast
+          trigger="open-toast"
+          message="Navigating back to home page"
+          icon="home"
+          [duration]="2000"
+        ></ion-toast>
         <ion-icon
           name="home"
           style="margin-right: 10px; color: chocolate"
         ></ion-icon>
         <ion-label>Home</ion-label>
       </ion-item>
-      <ion-item (click)="navigate(0)">
+      <ion-item id="open-toast1" (click)="navigate(0)">
+        <ion-toast
+          trigger="open-toast1"
+          message="Navigating back to profiles page"
+          icon="person"
+          [duration]="2000"
+        ></ion-toast>
         <ion-icon
           name="person"
           style="margin-right: 10px; color: chocolate"
         ></ion-icon>
         <ion-label>Profile</ion-label>
       </ion-item>
-      <ion-item (click)="navigate(0)">
+      <ion-item id="open-toast2" (click)="navigate(0)">
+        <ion-toast
+        trigger="open-toast2"
+        message="Navigating back to settings page"
+        icon="settings"
+        [duration]="2000"
+      ></ion-toast>
         <ion-icon
           name="settings"
           style="margin-right: 10px; color: chocolate"

@@ -14,7 +14,13 @@ export interface PeriodicElement {
   selectOption: string;
   image: any | undefined;
 } 
+const ELEMENT_DATA: PeriodicElement[] = [
+  { course: 'B.Pharma', checkbox: false, selectOption: '',image: undefined},
+  { course: 'M.Phil', checkbox: false, selectOption: '',image: undefined},
 
+  
+  { course: 'M.Pharma', checkbox: false, selectOption: '',image: undefined},
+];
 @Component({
   selector: 'app-table',
   templateUrl: './table.page.html',

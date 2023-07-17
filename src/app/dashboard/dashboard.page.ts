@@ -23,11 +23,11 @@ export class DashboardPage implements OnInit {
     this.router.navigate(['/home' ])
   }
   navigate(index : number){
-    alert(`You clicked on ${index}`);
-    console.log('working!')
     switch (index) {
+      case 0:
+        this.router.navigate(['/']);
+        break;
       case 1:
-        console.log('working?')
         this.router.navigate(['/inspection-list']);
         break;
       case 2:
