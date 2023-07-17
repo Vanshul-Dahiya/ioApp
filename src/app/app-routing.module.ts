@@ -59,7 +59,19 @@ const routes: Routes = [
   {
     path: 'calculation',
     loadChildren: () => import('./calculation/calculation.module').then( m => m.CalculationPageModule)
+  },  {
+    path: 'faculty-detail',
+    loadChildren: () => import('./faculty-detail/faculty-detail.module').then( m => m.FacultyDetailPageModule)
   },
+  {
+    path: 'infrastructure',
+    loadChildren: () => import('./infrastructure/infrastructure.module').then( m => m.InfrastructurePageModule)
+  },
+  {
+    path: 'equipment',
+    loadChildren: () => import('./equipment/equipment.module').then( m => m.EquipmentPageModule)
+  },
+
 ];
 
 @NgModule({

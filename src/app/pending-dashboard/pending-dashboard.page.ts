@@ -30,13 +30,13 @@ export class PendingDashboardPage implements OnInit {
         this.router.navigate(['/table']);
         break;
       case 3:
-        this.router.navigate(['/table']);
+        this.router.navigate(['/faculty-detail']);
         break;
       case 4:
-        this.router.navigate(['/table']);
+        this.router.navigate(['/infrastructure']);
         break;
       case 5:
-        this.router.navigate(['/table']);
+        this.router.navigate(['/equipment']);
         break;
       case 6:
         this.router.navigate(['/table']);

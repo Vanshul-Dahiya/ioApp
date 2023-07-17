@@ -31,15 +31,15 @@ export class InspectionDashboardPage implements OnInit {
         console.log(index)
         break;
       case 3:
-        this.router.navigate(['/table']);
+        this.router.navigate(['/faculty-detail']);
         console.log(index)
         break;
       case 4:
-        this.router.navigate(['/table']);
+        this.router.navigate(['/infrastructure']);
         console.log(index)
         break;
       case 5:
-        this.router.navigate(['/table']);
+        this.router.navigate(['/equipment']);
         console.log(index)
         break;
       case 6:
