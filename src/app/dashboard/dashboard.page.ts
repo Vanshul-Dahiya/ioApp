@@ -28,13 +28,13 @@ export class DashboardPage implements OnInit {
         this.router.navigate(['/']);
         break;
       case 1:
-        this.router.navigate(['/inspection-list']);
+        this.router.navigate(['/pending-list']);
         break;
       case 2:
         this.router.navigate(['/report']);
         break;
       case 3:
-        this.router.navigate(['/pending-list']);
+        this.router.navigate(['/inspection-list']);
         break;
       case 4:
         this.router.navigate(['/claim-form']);
