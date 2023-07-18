@@ -12,7 +12,8 @@ export class ClaimFormPage implements OnInit {
 
   ngOnInit() {
   }
-  selectedOption: string | undefined;
+  selectedOption1: string | undefined;
+  selectedOption2: string | undefined;
   xyz:string | undefined;
   abc:string | undefined;
  navigate(){

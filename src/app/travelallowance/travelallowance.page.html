@@ -9,38 +9,38 @@
   <ion-card>
     <div class="labels-container">
       <ion-label>Departure Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="abc"></ion-input>
+      <ion-input class="center1" [(ngModel)]="onwardDeparture"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
       <ion-item>
         <ion-datetime-button
           class="center1"
-          datetime="datetime"
+          datetime="datetime1"
         ></ion-datetime-button>
 
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime"></ion-datetime>
+            <ion-datetime id="datetime1"></ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-item>
     </div>
     <div class="labels-container">
       <ion-label>Arrival Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
+      <ion-input class="center1" [(ngModel)]="onwardArrival"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
       <ion-item>
         <ion-datetime-button
           class="center1"
-          datetime="datetime"
+          datetime="datetime2"
         ></ion-datetime-button>
 
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime"></ion-datetime>
+            <ion-datetime id="datetime2"></ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-item>
@@ -51,7 +51,7 @@
         <!-- <ion-label class="center">Service/Retired:</ion-label> -->
         <ion-select
           class="center"
-          [(ngModel)]="selectedOption"
+          [(ngModel)]="selectedOption3"
           class="select-no-underline"
         >
           <ion-select-option value="Option 1">BUS</ion-select-option>
@@ -62,45 +62,45 @@
     </div>
     <div class="labels-container">
       <ion-label>Fair (Rs.):</ion-label>
-      <ion-input class="center1" [(ngModel)]="lxa"></ion-input>
+      <ion-input class="center1" [(ngModel)]="onwardFair"></ion-input>
     </div>
   </ion-card>
   <h1 class="form-heading">Destination return Journey</h1>
   <ion-card>
     <div class="labels-container">
       <ion-label>Departure Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="abc"></ion-input>
+      <ion-input class="center1" [(ngModel)]="returnDeparture"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
       <ion-item>
         <ion-datetime-button
           class="center1"
-          datetime="datetime"
+          datetime="datetime3"
         ></ion-datetime-button>
 
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime"></ion-datetime>
+            <ion-datetime id="datetime3"></ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-item>
     </div>
     <div class="labels-container">
       <ion-label>Arrival Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
+      <ion-input class="center1" [(ngModel)]="returnArrival"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
       <ion-item>
         <ion-datetime-button
           class="center1"
-          datetime="datetime"
+          datetime="datetime4"
         ></ion-datetime-button>
 
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime"></ion-datetime>
+            <ion-datetime id="datetime4"></ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-item>
@@ -111,7 +111,7 @@
         <!-- <ion-label class="center">Service/Retired:</ion-label> -->
         <ion-select
           class="center"
-          [(ngModel)]="selectedOption"
+          [(ngModel)]="selectedOption4"
           class="select-no-underline"
         >
           <ion-select-option value="Option 1">BUS</ion-select-option>
@@ -122,7 +122,7 @@
     </div>
     <div class="labels-container">
       <ion-label>Fair (Rs.):</ion-label>
-      <ion-input class="center1" [(ngModel)]="lxa"></ion-input>
+      <ion-input class="center1" [(ngModel)]="returnFair"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Total sum:</ion-label>

@@ -11,10 +11,16 @@ export class TravelallowancePage implements OnInit {
 
   ngOnInit() {
   }
-  abc:string | undefined;
-  xyz:string | undefined;
-  selectedOption: string | undefined;
-  lxa:string | undefined;
+  onwardDeparture:string | undefined;
+  onwardArrival:string | undefined;
+  returnArrival:string | undefined;
+  returnDeparture:string | undefined;
+
+  selectedOption3: string | undefined;
+  selectedOption4: string | undefined;
+
+  onwardFair : string |undefined;
+  returnFair : string |undefined;
 
   navigate(){
     this.router.navigate(['/attachment'])

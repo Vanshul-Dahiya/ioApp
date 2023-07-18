@@ -12,7 +12,8 @@ export class AttachmentPage implements OnInit {
 
   ngOnInit() {
   }
-  selectedOption: string | undefined;
+  selectedOption5: string | undefined;
+  selectedOption6: string | undefined;
   
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
