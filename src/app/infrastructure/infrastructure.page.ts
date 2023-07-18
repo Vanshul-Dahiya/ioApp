@@ -12,7 +12,7 @@ export interface PeriodicElement {
   course: string;
   checkbox: boolean;
   selectOption: string;
-  image: any | undefined;
+  image:string| undefined;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
   { course: 'B.Pharma', checkbox: false, selectOption: '', image: undefined },
@@ -85,9 +85,15 @@ export class InfrastructurePage implements OnInit {
     console.log(this.imageSource);
   };
   getPhoto(index: number) {
-    if (this.dataSource && this.dataSource[index] && this.imageSource)
+    if (this.dataSource && this.dataSource[index] && this.dataSource[index].image) {
       return this.dataSource[index].image;
+    }
+  
+    // Add a default return statement
+    return '';
   }
+  
+  
 
   submitTableData() {
     localStorage.setItem('tableData', JSON.stringify(this.dataSource));
