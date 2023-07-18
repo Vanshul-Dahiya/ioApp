@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-calculation',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculationPage implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
 
   btnClick(){
-    alert('Form Submitted!')
+    this.router.navigate(['/review']);
   }
 }

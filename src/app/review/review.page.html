@@ -1,0 +1,271 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>review</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1 class="form-heading">Basic Information</h1>
+  <ion-card>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label>Name:</ion-label>
+        <i> <ion-label>auto fetch</ion-label> </i>
+      </div>
+      <div class="labels-container">
+        <ion-label>Designation:</ion-label>
+        <i> <ion-label>auto fetch</ion-label> </i>
+      </div>
+      <div class="labels-container">
+        <ion-label>In service or retired:</ion-label>
+        <ion-item>
+          <i> <ion-label>auto fetch</ion-label> </i>
+        </ion-item>
+      </div>
+      <div class="labels-container">
+        <ion-label>BasicPay:</ion-label>
+        <i> <ion-label>auto fetch</ion-label> </i>
+      </div>
+      <div class="labels-container">
+        <ion-label>Declared income :</ion-label>
+        <i> <ion-label>auto fetch</ion-label> </i>
+      </div>
+      <div class="labels-container">
+        <ion-label>Purpose of Journey :</ion-label>
+        <ion-item>
+          <i> <ion-label>auto fetch</ion-label> </i>
+        </ion-item>
+      </div>
+      <div class="labels-container">
+        <ion-label>Dates of Event:</ion-label>
+        <ion-item>
+          <ion-datetime-button datetime="datetime"></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime id="datetime"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <h1 class="form-heading">Source onward Journey</h1>
+  <ion-card>
+    <div class="labels-container">
+      <ion-label>Departure Station :</ion-label>
+      <i> <ion-label>auto fetch</ion-label> </i>
+    </div>
+    <div class="labels-container">
+      <ion-label>Date and time :</ion-label>
+      <ion-item>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime1"
+        ></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime1"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Arrival Station :</ion-label>
+      <i> <ion-label>auto fetch</ion-label> </i>
+    </div>
+    <div class="labels-container">
+      <ion-label>Date and time :</ion-label>
+      <ion-item>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime2"
+        ></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime2"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Mode of Journey :</ion-label>
+      <ion-item>
+        <i> <ion-label>auto fetch</ion-label> </i>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Fair (Rs.):</ion-label>
+      <i> <ion-label>auto fetch</ion-label> </i>
+    </div>
+  </ion-card>
+  <h1 class="form-heading">Destination return Journey</h1>
+  <ion-card>
+    <div class="labels-container">
+      <ion-label>Departure Station :</ion-label>
+      <i> <ion-label>auto fetch</ion-label> </i>
+    </div>
+    <div class="labels-container">
+      <ion-label>Date and time :</ion-label>
+      <ion-item>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime3"
+        ></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime3"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Arrival Station :</ion-label>
+      <i> <ion-label>auto fetch</ion-label> </i>
+    </div>
+    <div class="labels-container">
+      <ion-label>Date and time :</ion-label>
+      <ion-item>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime4"
+        ></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime4"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Mode of Journey :</ion-label>
+      <ion-item>
+        <i> <ion-label class="center">auto fetch</ion-label> </i>
+      </ion-item>
+    </div>
+    <div class="labels-container">
+      <ion-label>Fair (Rs.):</ion-label>
+      <i> <ion-label>auto fetch</ion-label> </i>
+    </div>
+    <div class="labels-container">
+      <ion-label>Total sum:</ion-label>
+      <ion-label class="center1"></ion-label>
+    </div>
+  </ion-card>
+  <div class="labels-container">
+    <ion-item>
+      <h4>Mode of Travel onward journey :</h4>
+
+      <!-- <ion-label class="center">Service/Retired:</ion-label> -->
+      <i> <ion-label>auto fetch</ion-label> </i>
+    </ion-item>
+  </div>
+  <ion-card>
+    <ion-item>
+      <div class="labels-container1">
+        <ion-label>TicketUpload:</ion-label>
+        <div class="file-upload-container">
+          <ion-label class="file-upload-label"></ion-label>
+          <i> <ion-label>auto fetch</ion-label> </i>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="labels-container1">
+        <ion-label>Bill Upload :</ion-label>
+        <div class="file-upload-container">
+          <ion-label class="file-upload-label"></ion-label>
+          <i> <ion-label>auto fetch</ion-label> </i>
+        </div>
+      </div>
+    </ion-item>
+  </ion-card>
+
+  <div class="labels-container">
+    <ion-item>
+      <h4>Mode of Travel return journey :</h4>
+
+      <i> <ion-label>auto fetch</ion-label> </i>
+    </ion-item>
+  </div>
+  <ion-card>
+    <ion-item>
+      <div class="labels-container1">
+        <ion-label>TicketUpload:</ion-label>
+        <div class="file-upload-container">
+          <ion-label class="file-upload-label"></ion-label>
+          <i> <ion-label>auto fetch</ion-label> </i>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="labels-container1">
+        <ion-label>Bill Upload :</ion-label>
+        <div class="file-upload-container">
+          <ion-label class="file-upload-label"></ion-label>
+          <i> <ion-label>auto fetch</ion-label> </i>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="labels-container1">
+        <ion-label>Other Uploads :</ion-label>
+        <div class="file-upload-container">
+          <ion-label class="file-upload-label"></ion-label>
+          <i> <ion-label>auto fetch</ion-label> </i>
+        </div>
+      </div>
+    </ion-item>
+  </ion-card>
+
+  <h3 class="form-heading">DECLARATION / UNDERTAKING</h3>
+  <ion-card>
+    <ion-card-content class="content-container">
+      <div class="labels-container">
+        <ion-label
+          >I have actually travelled by the mode and class and T.A. has been
+          claimed accordingly. I will perform the journey by mode and class for
+          which I have been paid advance by the PCI. I have not claimed TA/DA or
+          any other allowance for this journey from any other source. I was not
+          provided free lodging, Boarding, Conveyance at the cost of
+          Government/University or an Autonomous Body. Particulars given in the
+          bill are true and correct.</ion-label
+        >
+      </div>
+    </ion-card-content>
+    <div class="labels-container">
+      <ion-label>Name:</ion-label>
+      <ion-label class="center">abc </ion-label>
+    </div>
+    <div class="labels-container">
+      <ion-label>Address :</ion-label>
+      <ion-label class="center">Address 123 </ion-label>
+    </div>
+    <div class="labels-container">
+      <ion-label>Date and time :</ion-label>
+      <ion-item>
+        <ion-datetime-button
+          class="center1"
+          datetime="datetime"
+        ></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-item>
+    </div>
+  </ion-card>
+  <ion-button (click)="submitBtn()">Submit </ion-button>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

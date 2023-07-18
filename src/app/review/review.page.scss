@@ -1,0 +1,17 @@
+.form-heading {
+    text-align: center;
+    font-weight: bold;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .labels-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Add this line */
+    margin-bottom: 0.5rem;
+  }

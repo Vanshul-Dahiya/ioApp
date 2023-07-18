@@ -1,33 +1,38 @@
-[       
-     { "id": 1,
-     "status": "filled",
-     "name":"General Information",
-     "image" :"information-circle"},
-     { "id": 2,
-     "status": "filled",
-     "name":"Statutory Documents",
-     "image" :"document-text"},
-     { "id": 3,
-     "status": "filled",
-     "name":"Faculty Details",
-     "image" :"person"},
-
-     { "id": 4,
-     "status": "filled",
-     "name":"Infrastructure",
-     "image" :"business-sharp"},
-
-     { "id": 5,
-     "status": "filled",
-     "name":"Equipment",
-     "image" :"flask-sharp"},
-  
-     { "id": 6,
-     "status": "filled",
-     "name":"Library",
-     "image" :"library"},
-     { "id": 7,
-     "status": "filled",
-     "name":"Digital Sign",
-     "image" :"finger-print-sharp"}
+[
+     {
+          "id": 1,
+          "status": "filled",
+          "name": "General Information",
+          "image": "information-circle"
+     },
+     {
+          "id": 2,
+          "status": "filled",
+          "name": "Statutory Documents",
+          "image": "document-text"
+     },
+     {
+          "id": 3,
+          "status": "filled",
+          "name": "Faculty Details",
+          "image": "person"
+     },
+     {
+          "id": 4,
+          "status": "filled",
+          "name": "Infrastructure",
+          "image": "business-sharp"
+     },
+     {
+          "id": 5,
+          "status": "filled",
+          "name": "Equipment",
+          "image": "flask-sharp"
+     },
+     {
+          "id": 6,
+          "status": "filled",
+          "name": "Library",
+          "image": "library"
+     }
 ]
