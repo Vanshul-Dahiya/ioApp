@@ -33,13 +33,6 @@
               <ion-select-option value="Option 1">Service</ion-select-option>
               <ion-select-option value="Option 2">Retired</ion-select-option>
             </ion-select>
-            <ion-select
-              [(ngModel)]="selectedOption"
-              class="select-no-underline"
-            >
-              <ion-select-option value="Option 1">Service</ion-select-option>
-              <ion-select-option value="Option 2">Retired</ion-select-option>
-            </ion-select>
           </ion-item>
         </div>
         <div class="labels-container">
@@ -54,13 +47,6 @@
           <ion-label>Purpose of Journey :</ion-label>
           <ion-item>
             <!-- <ion-label class="center">Service/Retired:</ion-label> -->
-            <ion-select
-              [(ngModel)]="selectedOption"
-              class="select-no-underline"
-            >
-              <ion-select-option value="Option 1">Meeting</ion-select-option>
-              <ion-select-option value="Option 2">Inspection</ion-select-option>
-            </ion-select>
             <ion-select
               [(ngModel)]="selectedOption"
               class="select-no-underline"
@@ -86,10 +72,11 @@
     </ion-card>
     <ion-button class="custom-button" (click)="navigate()">SUBMIT</ion-button>
   </ion-content>
-  <ion-footer>
-    <ion-toolbar>
-      <ion-buttons slot="end">
-        <ion-back-button defaultHref="/dashboard"></ion-back-button>
-      </ion-buttons>
-    </ion-toolbar> </ion-footer
-></ion-content>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
