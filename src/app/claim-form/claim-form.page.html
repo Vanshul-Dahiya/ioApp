@@ -25,7 +25,6 @@
         <div class="labels-container">
           <ion-label>In service or retired:</ion-label>
           <ion-item>
-            <!-- <ion-label class="center">Service/Retired:</ion-label> -->
             <ion-select
               [(ngModel)]="selectedOption1"
               class="select-no-underline"
@@ -37,7 +36,12 @@
         </div>
         <div class="labels-container">
           <ion-label>BasicPay:</ion-label>
-          <ion-input class="center1" [(ngModel)]="xyz"></ion-input>
+          <ion-input
+            type="text"
+           (input) = "onInputChange(textInput)"
+            class="center1"
+            [(ngModel)]="textInput"
+          ></ion-input>
         </div>
         <div class="labels-container">
           <ion-label>Declared income :</ion-label>
@@ -63,7 +67,10 @@
 
             <ion-modal [keepContentsMounted]="true">
               <ng-template>
-                <ion-datetime id="datetime"></ion-datetime>
+                <ion-datetime
+                  (ionChange)="onDateTimeChange($event)"
+                  id="datetime"
+                ></ion-datetime>
               </ng-template>
             </ion-modal>
           </ion-item>

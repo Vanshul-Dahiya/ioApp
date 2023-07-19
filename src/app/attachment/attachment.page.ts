@@ -15,9 +15,16 @@ export class AttachmentPage implements OnInit {
   selectedOption5: string | undefined;
   selectedOption6: string | undefined;
   
-  onFileSelected(event: any) {
+  onFileSelected(index:number,event: any) {
     const file: File = event.target.files[0];
-    console.log(file);
+    if (file) {
+      console.log(index + ' - File:', file);
+      console.log( index + ' - ' + file);
+    } else {
+      console.log('No file selected.');
+      console.log( '-> ' + index + ' - ' ,file);
+    }
+
     // Perform further actions with the selected file
   }
   navigate(){
