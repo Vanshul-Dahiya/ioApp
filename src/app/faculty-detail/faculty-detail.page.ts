@@ -73,17 +73,21 @@ export class FacultyDetailPage implements OnInit {
       resultType: CameraResultType.Uri,
       source: CameraSource.Prompt,
     });
-
+  
     // this.imageSource= 'data:image/jpeg;base64,'+image.base64String;
     // console.log(this.imageSource)
     this.imageSource = this.domSanitizer.bypassSecurityTrustUrl(
       image.webPath ? image.webPath : ''
     );
+    
     if (this.dataSource && this.dataSource[index] && this.imageSource) {
-      this.dataSource[index].image = this.imageSource;
+      // Update the 'image' property of the respective element in the dataSource array
+      this.dataSource[index].image = this.imageSource['changingThisBreaksApplicationSecurity'];
     }
-    console.log(this.imageSource);
+    
+    console.log(this.dataSource);
   };
+  
   getPhoto(index: number) {
     if (this.dataSource && this.dataSource[index] && this.dataSource[index].image) {
       return this.dataSource[index].image;
