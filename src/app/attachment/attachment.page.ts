@@ -7,27 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./attachment.page.scss'],
 })
 export class AttachmentPage implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router : Router) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
   selectedOption5: string | undefined;
   selectedOption6: string | undefined;
-  
-  onFileSelected(index:number,event: any) {
+
+  onFileSelected(index: number, event: any) {
     const file: File = event.target.files[0];
     if (file) {
       console.log(index + ' - File:', file);
-      console.log( index + ' - ' + file);
     } else {
       console.log('No file selected.');
-      console.log( '-> ' + index + ' - ' ,file);
     }
-
-    // Perform further actions with the selected file
   }
-  navigate(){
+  navigate() {
     this.router.navigate(['/calculation']);
   }
 }

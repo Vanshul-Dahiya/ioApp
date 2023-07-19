@@ -55,6 +55,13 @@ export class ClaimFormPage implements OnInit {
 
     this.selectedOption1 = '';
     this.selectedOption2 = '';
-    this.router.navigate(['/travelallowance']);
+
+    const dataToPass = {
+      value1: this.selectedDateTime,
+      value2: selectOption1,
+      // Add more values as needed
+    };
+
+    this.router.navigate(['/travelallowance'],{state:dataToPass});
   }
 }
