@@ -16,14 +16,22 @@ export class ClaimFormPage implements OnInit {
   ) {}
 
   ngOnInit() {}
-  selectedOption1: string = '';
-  selectedOption2: string = '';
-  selectedDateTime: string = '';
-  xyz: string | undefined;
-  abc: string | undefined;
-  textInput: string = '';
+  serviceOption: string = '';
+  purposeOption: string = '';
+
+  eventDateTime: string = '';
+
+  declaredIncome: string | undefined;
+
+  basicPayInput: string = '';
+  declaredIncomeInput: string = '';
+
   formattedText: string = '';
-  getOptionText(optionValue: string): string {
+
+  serviceSelectedOption: any;
+  purposeSelectedOption: any;
+
+  getServiceOptionText(optionValue: string): string {
     switch (optionValue) {
       case 'Option 1':
         return 'Service';
@@ -31,6 +39,16 @@ export class ClaimFormPage implements OnInit {
         return 'Retired';
       default:
         return '';
+    }
+  }
+  getPurposeOptionText(optionValue: string): string {
+    switch (optionValue) {
+      case 'Option 1':
+        return 'Meeting';
+      case 'Option 2':
+        return 'Inspection';
+      default:
+        return '-----';
     }
   }
   sendDataToService() {
@@ -41,53 +59,58 @@ export class ClaimFormPage implements OnInit {
     this.dataSharingService.setData(dataToSend);
     console.log(' data to send ->   ', dataToSend);
   }
+  //  5 -> 2 input | 2 select option | 1 dateTime
   async saveData() {
-    const data = 'data imp1';
+    // * option select
+    // this.serviceSelectedOption = this.getServiceOptionText(this.selectedOption1);
+    // const data = this.serviceSelectedOption;
+
+    // * dateTime
+    // const data = this.eventDateTime;
+
+    // * input Text
+    // const data = this.formattedText;
+
+    const data = this.formattedText;
     await this.storage.set('value2', data);
     console.log('Saving data ... ');
   }
-  async retrieveData() {
-    console.log(this.storage.get('value2'));
-  }
   onDateTimeChange(event: any) {
-    this.selectedDateTime = event.detail.value;
-    this.selectedDateTime = new Date(this.selectedDateTime).toLocaleString(
-      'en-US',
-      {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-      }
-    );
-    console.log(this.selectedDateTime);
+    this.eventDateTime = event.detail.value;
+    this.eventDateTime = new Date(this.eventDateTime).toLocaleString('en-US', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    console.log(this.eventDateTime);
   }
   onInputChange(value: string) {
     if (value) {
-      this.textInput = value;
-      this.formattedText = this.textInput.toString();
-      console.log(this.textInput + '  < - >  ' + this.formattedText);
+      this.formattedText = value.toString();
+      console.log(this.formattedText, ` -basicpay input ${this.basicPayInput} -` , '  < - >  ');
     }
   }
+
   navigate() {
     // console.log( 'option 1 ->  ' + this.selectedOption1 + '  option 2 -> '  + this.selectedOption2 ) ;
-    const selectOption1 = this.getOptionText(this.selectedOption1);
+
     console.log(
       'selectedOption1 -> ' +
-        selectOption1 +
-        ' selectedDateTime -> ' +
-        this.selectedDateTime +
+        this.serviceSelectedOption +
+        ' eventDateTime -> ' +
+        this.eventDateTime +
         ' formattedText -> ' +
         this.formattedText
     );
 
-    this.selectedOption1 = '';
-    this.selectedOption2 = '';
+    this.serviceOption = '';
+    this.purposeOption = '';
 
     const dataToPass = {
-      value1: this.selectedDateTime,
-      value2: selectOption1,
+      value1: this.eventDateTime,
+      value2: this.serviceSelectedOption,
       // Add more values as needed
     };
     this.sendDataToService();
