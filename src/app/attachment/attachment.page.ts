@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { DataSharingService } from '../services/data-sharing.service';
 
 @Component({
   selector: 'app-attachment',
@@ -7,15 +8,21 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./attachment.page.scss'],
 })
 export class AttachmentPage implements OnInit {
-  constructor(private router: Router) {}
- val1: string="";
- val2: string="";
-
+  constructor(
+    private router: Router,
+    private dataSharingService: DataSharingService
+  ) {}
+  val1: string = '';
+  val2: string = '';
+  sharedData: any;
   ngOnInit() {
+    this.sharedData = this.dataSharingService.getData();
+    console.log(this.sharedData);
+
     const data = this.router.getCurrentNavigation()?.extras.state;
     // this.val1 = data?.['value1'];
     this.val2 = data?.['value2'];
-    console.log( this.val2);
+    console.log(this.val2);
   }
   sourceVehicle: string ="";
   destinationVehicle: string ="";
