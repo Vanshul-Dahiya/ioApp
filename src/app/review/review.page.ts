@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-review',
@@ -11,10 +12,13 @@ export class ReviewPage implements OnInit {
   constructor(
     private router: Router,
     private alertController: AlertController,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private storage: Storage
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  
+  }
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
@@ -24,7 +28,13 @@ export class ReviewPage implements OnInit {
 
     await toast.present();
   }
-
+  async retrieveData() {
+    const label1 = document.getElementById('label1');
+    const val1 = await this.storage.get('value2');
+    if (label1) {
+      label1.innerHTML = val1;
+    }
+  }
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'Confirmation',

@@ -1,16 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>review</ion-title>
+    <ion-title style="text-align: center; font-weight: bolder;">Review Page</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h1 class="form-heading">Basic Information</h1>
+  <h1 class="form-heading" (click)="retrieveData()" >Basic Information</h1>
   <ion-card>
     <ion-card-content class="content-container">
       <div class="labels-container">
         <ion-label>Name:</ion-label>
-        <i> <ion-label>auto fetch</ion-label> </i>
+        <i> <ion-label id="label1">auto fetch</ion-label> </i>
       </div>
       <div class="labels-container">
         <ion-label>Designation:</ion-label>

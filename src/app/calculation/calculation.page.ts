@@ -19,7 +19,7 @@ export class CalculationPage implements OnInit {
   }
 
   btnClick(){
-   
+   this.router.navigate(['/review']);
   }
   
 }

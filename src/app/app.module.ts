@@ -1,3 +1,4 @@
+import { DataSharingService } from './services/data-sharing.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -8,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePage } from './home/home.page';
 import { DashboardPage } from './dashboard/dashboard.page';
+import {IonicStorageModule} from '@ionic/storage-angular'
 
 @NgModule({
   declarations: [AppComponent, HomePage, DashboardPage],
@@ -15,9 +17,16 @@ import { DashboardPage } from './dashboard/dashboard.page';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    IonicStorageModule.forRoot(),
     HttpClientModule,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    {
+      provide: RouteReuseStrategy,
+      useClass: IonicRouteStrategy,
+    },
+    DataSharingService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

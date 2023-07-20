@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataSharingService } from '../services/data-sharing.service';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-claim-form',
@@ -7,7 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./claim-form.page.scss'],
 })
 export class ClaimFormPage implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private dataSharingService: DataSharingService,
+    private storage: Storage
+  ) {}
 
   ngOnInit() {}
   selectedOption1: string = '';
@@ -26,6 +32,22 @@ export class ClaimFormPage implements OnInit {
       default:
         return '';
     }
+  }
+  sendDataToService() {
+    const dataToSend = {
+      name: 'J',
+      age: 3,
+    };
+    this.dataSharingService.setData(dataToSend);
+    console.log(' data to send ->   ', dataToSend);
+  }
+  async saveData() {
+    const data = 'data imp1';
+    await this.storage.set('value2', data);
+    console.log('Saving data ... ');
+  }
+  async retrieveData() {
+    console.log(this.storage.get('value2'));
   }
   onDateTimeChange(event: any) {
     this.selectedDateTime = event.detail.value;
@@ -51,7 +73,14 @@ export class ClaimFormPage implements OnInit {
   navigate() {
     // console.log( 'option 1 ->  ' + this.selectedOption1 + '  option 2 -> '  + this.selectedOption2 ) ;
     const selectOption1 = this.getOptionText(this.selectedOption1);
-    console.log( 'selectedOption1 -> ' + selectOption1 + ' selectedDateTime -> '  + this.selectedDateTime +  ' formattedText -> ' + this.formattedText ) ;
+    console.log(
+      'selectedOption1 -> ' +
+        selectOption1 +
+        ' selectedDateTime -> ' +
+        this.selectedDateTime +
+        ' formattedText -> ' +
+        this.formattedText
+    );
 
     this.selectedOption1 = '';
     this.selectedOption2 = '';
@@ -61,7 +90,7 @@ export class ClaimFormPage implements OnInit {
       value2: selectOption1,
       // Add more values as needed
     };
-
-    this.router.navigate(['/travelallowance'],{state:dataToPass});
+    this.sendDataToService();
+    this.router.navigate(['/travelallowance'], { state: dataToPass });
   }
 }
