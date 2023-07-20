@@ -9,7 +9,7 @@
   <ion-card>
     <div class="labels-container">
       <ion-label>Departure Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="onwardDeparture"></ion-input>
+      <ion-input class="center1" [(ngModel)]=" sourceDepartureStaion"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
@@ -28,7 +28,7 @@
     </div>
     <div class="labels-container">
       <ion-label>Arrival Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="onwardArrival"></ion-input>
+      <ion-input class="center1" [(ngModel)]="sourceArrivalStaion"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
@@ -51,7 +51,7 @@
         <!-- <ion-label class="center">Service/Retired:</ion-label> -->
         <ion-select
           class="center"
-          [(ngModel)]="selectedOption3"
+          [(ngModel)]="sourceVehicle"
           class="select-no-underline"
         >
           <ion-select-option value="Option 1">BUS</ion-select-option>
@@ -62,14 +62,14 @@
     </div>
     <div class="labels-container">
       <ion-label>Fair (Rs.):</ion-label>
-      <ion-input class="center1" [(ngModel)]="onwardFair"></ion-input>
+      <ion-input class="center1" [(ngModel)]="sourceFair"></ion-input>
     </div>
   </ion-card>
   <h1 class="form-heading">Destination return Journey</h1>
   <ion-card>
     <div class="labels-container">
       <ion-label>Departure Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="returnDeparture"></ion-input>
+      <ion-input class="center1" [(ngModel)]="returnArivaStation"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
@@ -88,7 +88,7 @@
     </div>
     <div class="labels-container">
       <ion-label>Arrival Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="returnArrival"></ion-input>
+      <ion-input class="center1" [(ngModel)]="returnDepartureStaion"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
@@ -111,7 +111,7 @@
         <!-- <ion-label class="center">Service/Retired:</ion-label> -->
         <ion-select
           class="center"
-          [(ngModel)]="selectedOption4"
+          [(ngModel)]="destinationVehicle"
           class="select-no-underline"
         >
           <ion-select-option value="Option 1">BUS</ion-select-option>
@@ -122,13 +122,15 @@
     </div>
     <div class="labels-container">
       <ion-label>Fair (Rs.):</ion-label>
-      <ion-input class="center1" [(ngModel)]="returnFair"></ion-input>
+      <ion-input class="center1" [(ngModel)]="destinationFair"></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Total sum:</ion-label>
       <ion-label class="center1"></ion-label>
     </div>
   </ion-card>
+  <ion-button (click)="saveData()">saveData</ion-button>
+    <ion-button (click)="getData()">getData</ion-button>
   <ion-button class="custom-button" (click)="navigate()">Next</ion-button>
 </ion-content>
 <ion-footer>
@@ -136,5 +138,6 @@
     <ion-buttons slot="end">
       <ion-back-button defaultHref="/claim-form"></ion-back-button>
     </ion-buttons>
+    
   </ion-toolbar>
 </ion-footer>

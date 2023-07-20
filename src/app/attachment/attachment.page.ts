@@ -17,8 +17,8 @@ export class AttachmentPage implements OnInit {
     this.val2 = data?.['value2'];
     console.log( this.val2);
   }
-  selectedOption5: string | undefined;
-  selectedOption6: string | undefined;
+  sourceVehicle: string ="";
+  destinationVehicle: string ="";
 
   onFileSelected(index: number, event: any) {
     const file: File = event.target.files[0];
@@ -32,8 +32,8 @@ export class AttachmentPage implements OnInit {
     const navigationExtras: NavigationExtras = {
       state: {
         value2: this.val2,
-        selectedOption5: this.selectedOption5,
-        selectedOption6: this.selectedOption6
+        selectedOption5: this.sourceVehicle,
+        selectedOption6: this.destinationVehicle
       },
     };
     this.router.navigate(['/calculation']);
