@@ -19,32 +19,27 @@
       <div class="labels-container">
         <ion-label>In service or retired:</ion-label>
         <ion-item>
-          <i> <ion-label>auto fetch</ion-label> </i>
+          <i> <ion-label id="serviceOptionFetch">auto fetch</ion-label> </i>
         </ion-item>
       </div>
       <div class="labels-container">
         <ion-label>BasicPay:</ion-label>
-        <i> <ion-label>auto fetch</ion-label> </i>
+        <i> <ion-label id="basicPayInputFetch">auto fetch</ion-label> </i>
       </div>
       <div class="labels-container">
         <ion-label>Declared income :</ion-label>
-        <i> <ion-label>auto fetch</ion-label> </i>
+        <i> <ion-label id="declaredIncomeInputFetch">auto fetch</ion-label> </i>
       </div>
       <div class="labels-container">
         <ion-label>Purpose of Journey :</ion-label>
         <ion-item>
-          <i> <ion-label>auto fetch</ion-label> </i>
+          <i> <ion-label id="purposeOptionFetch">auto fetch</ion-label> </i>
         </ion-item>
       </div>
       <div class="labels-container">
         <ion-label>Dates of Event:</ion-label>
         <ion-item>
-          <ion-datetime-button datetime="datetime"></ion-datetime-button>
-          <ion-modal [keepContentsMounted]="true">
-            <ng-template>
-              <ion-datetime id="datetime"></ion-datetime>
-            </ng-template>
-          </ion-modal>
+          <ion-label id="infoDateTimeFetch">auto fetch</ion-label>
         </ion-item>
       </div>
     </ion-card-content>

@@ -62,10 +62,10 @@ export class TravelallowancePage implements OnInit {
   }
   
  
-  sourceDepartureStaion: string="";
-  sourceArrivalStaion: string="";
-  returnDepartureStaion: string="";
-  returnArivaStation: string="";
+  sourceDepartureStation: string="";
+  sourceArrivalStation: string="";
+  returnDepartureStation: string="";
+  returnArrivalStation: string="";
 
   sourceVehicle: string ="";
   destinationVehicle: string ="";

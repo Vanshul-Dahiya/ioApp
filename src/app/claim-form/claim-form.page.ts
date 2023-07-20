@@ -33,19 +33,19 @@ export class ClaimFormPage implements OnInit {
 
   getServiceOptionText(optionValue: string): string {
     switch (optionValue) {
-      case 'Option 1':
+      case 'Service':
         return 'Service';
-      case 'Option 2':
+      case 'Retired':
         return 'Retired';
       default:
-        return '';
+        return '?';
     }
   }
   getPurposeOptionText(optionValue: string): string {
     switch (optionValue) {
-      case 'Option 1':
+      case 'Meeting':
         return 'Meeting';
-      case 'Option 2':
+      case 'Inspection':
         return 'Inspection';
       default:
         return '-----';
@@ -71,8 +71,22 @@ export class ClaimFormPage implements OnInit {
     // * input Text
     // const data = this.formattedText;
 
-    const data = this.formattedText;
-    await this.storage.set('value2', data);
+    //  ! Set Options in local storage
+    this.serviceSelectedOption = this.getServiceOptionText(this.serviceOption);
+    await this.storage.set('serviceOption', this.serviceSelectedOption);
+
+    this.purposeSelectedOption = this.getPurposeOptionText(this.purposeOption);
+    await this.storage.set('purposeOption', this.purposeSelectedOption);
+
+    // ! Set Inputs in local storage
+    await this.storage.set('basicPayInput',this.basicPayInput);
+    await this.storage.set('declaredIncomeInput',this.declaredIncomeInput);
+
+    // ! Set DateTime in local storage
+    await this.storage.set('infoDateTime',this.eventDateTime)
+
+    // const data = this.formattedText;
+    // await this.storage.set('value2', data);
     console.log('Saving data ... ');
   }
   onDateTimeChange(event: any) {
@@ -89,7 +103,12 @@ export class ClaimFormPage implements OnInit {
   onInputChange(value: string) {
     if (value) {
       this.formattedText = value.toString();
-      console.log(this.formattedText, ` -basicpay input ${this.basicPayInput} -` , '  < - >  ');
+      console.log(
+        this.formattedText,
+        ` -basicpay input ${this.basicPayInput} -`,
+        '  < - > ',
+        ` -declared income input ${this.declaredIncomeInput} -`
+      );
     }
   }
 

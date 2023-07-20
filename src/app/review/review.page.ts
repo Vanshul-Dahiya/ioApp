@@ -29,10 +29,30 @@ export class ReviewPage implements OnInit {
     await toast.present();
   }
   async retrieveData() {
-    const label1 = document.getElementById('label1');
-    const val1 = await this.storage.get('value2');
+    const label1 = document.getElementById('serviceOptionFetch');
+    const val1 = await this.storage.get('serviceOption');
     if (label1) {
       label1.innerHTML = val1;
+    }
+    const label2 = document.getElementById('purposeOptionFetch');
+    const val2 = await this.storage.get('purposeOption');
+    if (label2) {
+      label2.innerHTML = val2;
+    }
+    const label3 = document.getElementById('basicPayInputFetch');
+    const val3 = await this.storage.get('basicPayInput');
+    if (label3) {
+      label3.innerHTML = val3;
+    }
+    const label4 = document.getElementById('declaredIncomeInputFetch');
+    const val4 = await this.storage.get('declaredIncomeInput');
+    if (label4) {
+      label4.innerHTML = val4;
+    }
+    const label5 = document.getElementById('infoDateTimeFetch');
+    const val5 = await this.storage.get('infoDateTime');
+    if (label5) {
+      label5.innerHTML = val5;
     }
   }
   async presentAlert() {
