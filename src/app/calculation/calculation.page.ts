@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-calculation',
@@ -7,13 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./calculation.page.scss'],
 })
 export class CalculationPage implements OnInit {
+  val2: string = "";
+  selectedOption5: string="";
+  selectedOption6: string="";
 
-  constructor(private router : Router) { }
+
+  constructor(private router : Router , private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+   
   }
 
   btnClick(){
+  
+    
     this.router.navigate(['/review']);
   }
+  
 }

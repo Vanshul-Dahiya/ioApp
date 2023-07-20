@@ -17,18 +17,45 @@ export class TravelallowancePage implements OnInit {
     this.val2 = data?.['value2'];
     console.log(this.val1, this.val2);
   }
+  getOptionText(optionValue: string): string {
+    switch (optionValue) {
+      case 'Option 1':
+        return 'bus';
+      case 'Option 2':
+        return 'flight';
+        case 'Option 3':
+        return 'train';
+      default:
+        return '';
+    }
+  }
   onwardDeparture: string | undefined;
   onwardArrival: string | undefined;
   returnArrival: string | undefined;
   returnDeparture: string | undefined;
 
-  selectedOption3: string | undefined;
-  selectedOption4: string | undefined;
+  selectedOption3: string ="";
+  selectedOption4: string ="";
 
   onwardFair: string | undefined;
   returnFair: string | undefined;
 
   navigate() {
-    this.router.navigate(['/attachment']);
-  }
+    const selectOption1 = this.getOptionText(this.selectedOption3);
+    console.log( 'selectedOption3 -> ' + this.selectedOption3 ) ;
+
+    this.selectedOption3 = '';
+    this.selectedOption4 = '';
+
+    const dataToPass = {
+     
+      value2: selectOption1,
+      // Add more values as needed
+    };
+
+  
+  
+    this.router.navigate(['/attachment'], {state:dataToPass});
+ 
+}
 }

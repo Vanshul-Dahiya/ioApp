@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-attachment',
@@ -8,8 +8,15 @@ import { Router } from '@angular/router';
 })
 export class AttachmentPage implements OnInit {
   constructor(private router: Router) {}
+ val1: string="";
+ val2: string="";
 
-  ngOnInit() {}
+  ngOnInit() {
+    const data = this.router.getCurrentNavigation()?.extras.state;
+    // this.val1 = data?.['value1'];
+    this.val2 = data?.['value2'];
+    console.log( this.val2);
+  }
   selectedOption5: string | undefined;
   selectedOption6: string | undefined;
 
@@ -22,6 +29,13 @@ export class AttachmentPage implements OnInit {
     }
   }
   navigate() {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        value2: this.val2,
+        selectedOption5: this.selectedOption5,
+        selectedOption6: this.selectedOption6
+      },
+    };
     this.router.navigate(['/calculation']);
   }
 }
