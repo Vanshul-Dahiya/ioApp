@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h1 class="form-heading" (click)="retrieveData()">Basic Information</h1>
+  <h1 class="form-heading">Basic Information</h1>
   <ion-card>
     <ion-card-content class="content-container">
       <div class="labels-container">
@@ -215,6 +215,7 @@
   </ion-card>
 
   <h3 class="form-heading">DECLARATION / UNDERTAKING</h3>
+  <ion-checkbox [(ngModel)]="isSubmitEnabled"></ion-checkbox>
   <ion-card>
     <ion-card-content class="content-container">
       <div class="labels-container">
@@ -253,7 +254,7 @@
       </ion-item>
     </div>
   </ion-card>
-  <ion-button (click)="submitBtn()">Submit </ion-button>
+  <ion-button [disabled]="!isSubmitEnabled"  (click)="submitBtn()">Submit </ion-button>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

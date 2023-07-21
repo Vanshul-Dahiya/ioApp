@@ -15,13 +15,15 @@ export class ReviewPage implements OnInit {
     private toastController: ToastController,
     private storage: Storage
   ) {}
-
+  isSubmitEnabled=false;
   imageURL1: string = '';
   imageURL2: string = '';
   imageURL3: string = '';
   imageURL4: string = '';
   imageURL5: string = '';
-  ngOnInit() {}
+  ngOnInit() {
+    this.retrieveData();
+  }
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
@@ -113,7 +115,7 @@ export class ReviewPage implements OnInit {
       label16.innerHTML = val16;
     }
     const label17 = document.getElementById('destinationFairfetch');
-    const val17= await this.storage.get('destinationFair');
+    const val17 = await this.storage.get('destinationFair');
     if (label17) {
       label17.innerHTML = val17;
     }

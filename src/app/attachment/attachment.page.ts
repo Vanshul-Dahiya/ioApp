@@ -75,7 +75,6 @@ export class AttachmentPage implements OnInit {
     );
   }
   navigate() {
-    this.saveData();
     this.router.navigate(['/calculation']);
   }
 }
