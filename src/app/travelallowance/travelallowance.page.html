@@ -8,39 +8,49 @@
   <h1 class="form-heading">Source onward Journey</h1>
   <ion-card>
     <div class="labels-container">
-      <ion-label>Departure Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]=" sourceDepartureStation"></ion-input>
+      <ion-label>Departure Station:</ion-label>
+      <ion-input
+        type="text"
+        (input)="onInputChange(sourceDepartureStation)"
+        class="center1"
+        [(ngModel)]="sourceDepartureStation"
+      ></ion-input>
     </div>
     <div class="labels-container">
-      <ion-label>Date and time :</ion-label>
+      <ion-label>Dates of Event:</ion-label>
       <ion-item>
-        <ion-datetime-button
-          class="center1"
-          datetime="datetime1"
-        ></ion-datetime-button>
+        <ion-datetime-button datetime="sourceDeparturedatetime"></ion-datetime-button>
 
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime1"></ion-datetime>
+            <ion-datetime
+              (ionChange)="onsourceDepartureDateChange($event)"
+              id="sourceDeparturedatetime"
+            ></ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-item>
     </div>
     <div class="labels-container">
-      <ion-label>Arrival Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="sourceArrivalStation"></ion-input>
+      <ion-label>Arrival Station:</ion-label>
+      <ion-input
+        type="text"
+        (input)="onInputChange(sourceArrivalStation)"
+        class="center1"
+        [(ngModel)]="sourceArrivalStation"
+      ></ion-input>
     </div>
     <div class="labels-container">
-      <ion-label>Date and time :</ion-label>
+      <ion-label>Dates of Event:</ion-label>
       <ion-item>
-        <ion-datetime-button
-          class="center1"
-          datetime="datetime2"
-        ></ion-datetime-button>
+        <ion-datetime-button datetime="sorceArrivaldatetime"></ion-datetime-button>
 
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime2"></ion-datetime>
+            <ion-datetime
+              (ionChange)=" onsourceArrivalDateChange($event)"
+              id="sorceArrivaldatetime"
+            ></ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-item>
@@ -61,46 +71,61 @@
       </ion-item>
     </div>
     <div class="labels-container">
-      <ion-label>Fair (Rs.):</ion-label>
-      <ion-input class="center1" [(ngModel)]="sourceFair"></ion-input>
+      <ion-label>Fair (Rs):</ion-label>
+      <ion-input
+        type="text"
+        (input)="onInputChange(sourceFair)"
+        class="center1"
+        [(ngModel)]="sourceFair"
+      ></ion-input>
     </div>
   </ion-card>
   <h1 class="form-heading">Destination return Journey</h1>
   <ion-card>
     <div class="labels-container">
-      <ion-label>Departure Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="returnArrivalStation"></ion-input>
+      <ion-label>Departure Station:</ion-label>
+      <ion-input
+        type="text"
+        (input)="onInputChange( returnDepartureStation)"
+        class="center1"
+        [(ngModel)]=" returnDepartureStation"
+      ></ion-input>
     </div>
     <div class="labels-container">
-      <ion-label>Date and time :</ion-label>
+      <ion-label>Dates of Event:</ion-label>
       <ion-item>
-        <ion-datetime-button
-          class="center1"
-          datetime="datetime3"
-        ></ion-datetime-button>
+        <ion-datetime-button datetime="destinationDeparturedatetime"></ion-datetime-button>
 
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime3"></ion-datetime>
+            <ion-datetime
+              (ionChange)="onDestinationDepartureDateChange($event)"
+              id="destinationDeparturedatetime"
+            ></ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-item>
     </div>
     <div class="labels-container">
-      <ion-label>Arrival Station :</ion-label>
-      <ion-input class="center1" [(ngModel)]="returnDepartureStation"></ion-input>
+      <ion-label>Arrival Station:</ion-label>
+      <ion-input
+        type="text"
+        (input)="onInputChange(returnArrivalStation )"
+        class="center1"
+        [(ngModel)]="returnArrivalStation"
+      ></ion-input>
     </div>
     <div class="labels-container">
-      <ion-label>Date and time :</ion-label>
+      <ion-label>Dates of Event:</ion-label>
       <ion-item>
-        <ion-datetime-button
-          class="center1"
-          datetime="datetime4"
-        ></ion-datetime-button>
+        <ion-datetime-button datetime="destinationarrivaldatetime"></ion-datetime-button>
 
         <ion-modal [keepContentsMounted]="true">
           <ng-template>
-            <ion-datetime id="datetime4"></ion-datetime>
+            <ion-datetime
+              (ionChange)="onDestinationArrivalDateChange($event)"
+              id="destinationarrivaldatetime"
+            ></ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-item>
@@ -121,16 +146,21 @@
       </ion-item>
     </div>
     <div class="labels-container">
-      <ion-label>Fair (Rs.):</ion-label>
-      <ion-input class="center1" [(ngModel)]="destinationFair"></ion-input>
+      <ion-label>Fair (Rs):</ion-label>
+      <ion-input
+        type="text"
+        (input)="onInputChange( destinationFair)"
+        class="center1"
+        [(ngModel)]="destinationFair"
+      ></ion-input>
     </div>
     <div class="labels-container">
       <ion-label>Total sum:</ion-label>
-      <ion-label class="center1"></ion-label>
+      <ion-label class="center1" id="totalSumFetch"></ion-label>
     </div>
   </ion-card>
   <ion-button (click)="saveData()">saveData</ion-button>
-    <ion-button (click)="getData()">getData</ion-button>
+  
   <ion-button class="custom-button" (click)="navigate()">Next</ion-button>
 </ion-content>
 <ion-footer>

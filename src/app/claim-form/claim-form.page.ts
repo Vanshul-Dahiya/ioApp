@@ -13,9 +13,9 @@ export class ClaimFormPage implements OnInit {
     private router: Router,
     private dataSharingService: DataSharingService,
     private storage: Storage
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   serviceOption: string = '';
   purposeOption: string = '';
 
@@ -79,11 +79,11 @@ export class ClaimFormPage implements OnInit {
     await this.storage.set('purposeOption', this.purposeSelectedOption);
 
     // ! Set Inputs in local storage
-    await this.storage.set('basicPayInput',this.basicPayInput);
-    await this.storage.set('declaredIncomeInput',this.declaredIncomeInput);
+    await this.storage.set('basicPayInput', this.basicPayInput);
+    await this.storage.set('declaredIncomeInput', this.declaredIncomeInput);
 
     // ! Set DateTime in local storage
-    await this.storage.set('infoDateTime',this.eventDateTime)
+    await this.storage.set('infoDateTime', this.eventDateTime)
 
     // const data = this.formattedText;
     // await this.storage.set('value2', data);
@@ -117,11 +117,11 @@ export class ClaimFormPage implements OnInit {
 
     console.log(
       'selectedOption1 -> ' +
-        this.serviceSelectedOption +
-        ' eventDateTime -> ' +
-        this.eventDateTime +
-        ' formattedText -> ' +
-        this.formattedText
+      this.serviceSelectedOption +
+      ' eventDateTime -> ' +
+      this.eventDateTime +
+      ' formattedText -> ' +
+      this.formattedText
     );
 
     this.serviceOption = '';
