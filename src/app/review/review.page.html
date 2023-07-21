@@ -47,103 +47,67 @@
   <h1 class="form-heading">Source onward Journey</h1>
   <ion-card>
     <div class="labels-container">
-      <ion-label>Departure Station :</ion-label>
-      <i> <ion-label>auto fetch</ion-label> </i>
+      <ion-label>Departure Station:</ion-label>
+      <i> <ion-label id="sourceDepartureStationfetch">auto fetch</ion-label> </i>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
-      <ion-item>
-        <ion-datetime-button
-          class="center1"
-          datetime="datetime1"
-        ></ion-datetime-button>
-
-        <ion-modal [keepContentsMounted]="true">
-          <ng-template>
-            <ion-datetime id="datetime1"></ion-datetime>
-          </ng-template>
-        </ion-modal>
-      </ion-item>
+        <ion-item>
+          <ion-label id="sourceDepartureDatefetch">auto fetch</ion-label>
+        </ion-item>
     </div>
     <div class="labels-container">
-      <ion-label>Arrival Station :</ion-label>
-      <i> <ion-label>auto fetch</ion-label> </i>
+      <ion-label>Arrival Station:</ion-label>
+      <i> <ion-label id="sourceArrivalStationfetch">auto fetch</ion-label> </i>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
-      <ion-item>
-        <ion-datetime-button
-          class="center1"
-          datetime="datetime2"
-        ></ion-datetime-button>
-
-        <ion-modal [keepContentsMounted]="true">
-          <ng-template>
-            <ion-datetime id="datetime2"></ion-datetime>
-          </ng-template>
-        </ion-modal>
-      </ion-item>
+        <ion-item>
+          <ion-label id="sourceArrivalDatefetch">auto fetch</ion-label>
+        </ion-item>
     </div>
     <div class="labels-container">
       <ion-label>Mode of Journey :</ion-label>
       <ion-item>
-        <i> <ion-label>auto fetch</ion-label> </i>
+        <i> <ion-label id="sourceModeOfJourneyfetch">auto fetch</ion-label> </i>
       </ion-item>
     </div>
     <div class="labels-container">
-      <ion-label>Fair (Rs.):</ion-label>
-      <i> <ion-label>auto fetch</ion-label> </i>
+      <ion-label>Fair:</ion-label>
+      <i> <ion-label id="sourceFairfetch">auto fetch</ion-label> </i>
     </div>
   </ion-card>
   <h1 class="form-heading">Destination return Journey</h1>
   <ion-card>
     <div class="labels-container">
-      <ion-label>Departure Station :</ion-label>
-      <i> <ion-label>auto fetch</ion-label> </i>
+      <ion-label>Departure Station:</ion-label>
+      <i> <ion-label id="returnDepartureStationfetch">auto fetch</ion-label> </i>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
-      <ion-item>
-        <ion-datetime-button
-          class="center1"
-          datetime="datetime3"
-        ></ion-datetime-button>
-
-        <ion-modal [keepContentsMounted]="true">
-          <ng-template>
-            <ion-datetime id="datetime3"></ion-datetime>
-          </ng-template>
-        </ion-modal>
-      </ion-item>
+        <ion-item>
+          <ion-label id="destinationdepartureDatefetch">auto fetch</ion-label>
+        </ion-item>
     </div>
     <div class="labels-container">
-      <ion-label>Arrival Station :</ion-label>
-      <i> <ion-label>auto fetch</ion-label> </i>
+      <ion-label>Arrival Station:</ion-label>
+      <i> <ion-label id="returnArrivalStationfetch">auto fetch</ion-label> </i>
     </div>
     <div class="labels-container">
       <ion-label>Date and time :</ion-label>
-      <ion-item>
-        <ion-datetime-button
-          class="center1"
-          datetime="datetime4"
-        ></ion-datetime-button>
-
-        <ion-modal [keepContentsMounted]="true">
-          <ng-template>
-            <ion-datetime id="datetime4"></ion-datetime>
-          </ng-template>
-        </ion-modal>
-      </ion-item>
+        <ion-item>
+          <ion-label id="destinationarrivalDatefetch">auto fetch</ion-label>
+        </ion-item>
     </div>
     <div class="labels-container">
       <ion-label>Mode of Journey :</ion-label>
       <ion-item>
-        <i> <ion-label class="center">auto fetch</ion-label> </i>
+        <i> <ion-label id="arrivalModeOfJourneyfetch">auto fetch</ion-label> </i>
       </ion-item>
     </div>
     <div class="labels-container">
-      <ion-label>Fair (Rs.):</ion-label>
-      <i> <ion-label>auto fetch</ion-label> </i>
+      <ion-label>Fair:</ion-label>
+      <i> <ion-label id="destinationFairfetch">auto fetch</ion-label> </i>
     </div>
     <div class="labels-container">
       <ion-label>Total sum:</ion-label>
