@@ -16,9 +16,12 @@ export class ReviewPage implements OnInit {
     private storage: Storage
   ) {}
 
-  ngOnInit() {
-  
-  }
+  imageURL1: string = '';
+  imageURL2: string = '';
+  imageURL3: string = '';
+  imageURL4: string = '';
+  imageURL5: string = '';
+  ngOnInit() {}
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
@@ -54,6 +57,78 @@ export class ReviewPage implements OnInit {
     if (label5) {
       label5.innerHTML = val5;
     }
+
+    const label18 = document.getElementById('imageFetch1');
+    const val18 = await this.storage.get('file-1');
+    // Convert the base64 string to a Blob
+    const contentType = 'image/png';
+    const imageBlob = this.base64ToBlob(val18, contentType);
+    console.log(imageBlob);
+    const imageUrl1 = URL.createObjectURL(imageBlob);
+    console.log('Image URL:', imageUrl1);
+    if (label18) {
+      this.imageURL1 = imageUrl1;
+    }
+
+    const label19 = document.getElementById('imageFetch2');
+    const val19 = await this.storage.get('file-2');
+    const contentType2 = 'image/png';
+    const imageBlob2 = this.base64ToBlob(val19, contentType2);
+    console.log(imageBlob2);
+    const imageUrl2 = URL.createObjectURL(imageBlob2);
+    console.log('Image URL:', imageUrl2);
+    if (label19) {
+      this.imageURL2 = imageUrl2;
+    }
+    const label20 = document.getElementById('imageFetch3');
+    const val20 = await this.storage.get('file-3');
+    const contentType3 = 'image/png';
+    const imageBlob3 = this.base64ToBlob(val20, contentType3);
+    console.log(imageBlob3);
+    const imageUrl3 = URL.createObjectURL(imageBlob3);
+    console.log('Image URL:', imageUrl3);
+    if (label20) {
+      this.imageURL3 = imageUrl3;
+    }
+    const label21 = document.getElementById('imageFetch4');
+    const val21 = await this.storage.get('file-4');
+    const contentType4 = 'image/png';
+    const imageBlob4 = this.base64ToBlob(val21, contentType4);
+    console.log(imageBlob4);
+    const imageUrl4 = URL.createObjectURL(imageBlob4);
+    console.log('Image URL:', imageUrl4);
+    if (label21) {
+      this.imageURL4 = imageUrl4;
+    }
+    const label22 = document.getElementById('imageFetch5');
+    const val22 = await this.storage.get('file-5');
+    const contentType5 = 'image/png';
+    const imageBlob5 = this.base64ToBlob(val22, contentType5);
+    console.log(imageBlob5);
+    const imageUrl5 = URL.createObjectURL(imageBlob5);
+    console.log('Image URL:', imageUrl5);
+    if (label22) {
+      this.imageURL5 = imageUrl5;
+    }
+    const label23 = document.getElementById('sourceVehicleFetch');
+    const val23 = await this.storage.get('sourceVehicle');
+    if (label23) {
+      label23.innerHTML = val23;
+    }
+    const label24 = document.getElementById('destinationVehicleFetch');
+    const val24 = await this.storage.get('destinationVehicle');
+    if (label24) {
+      label24.innerHTML = val24;
+    }
+  }
+  base64ToBlob(base64String: string, contentType: string = ''): Blob {
+    const byteCharacters = atob(base64String.split(',')[1]);
+    const byteNumbers = new Array(byteCharacters.length);
+    for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+    }
+    const byteArray = new Uint8Array(byteNumbers);
+    return new Blob([byteArray], { type: contentType });
   }
   async presentAlert() {
     const alert = await this.alertController.create({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { DataSharingService } from '../services/data-sharing.service';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-attachment',
@@ -10,39 +10,72 @@ import { DataSharingService } from '../services/data-sharing.service';
 export class AttachmentPage implements OnInit {
   constructor(
     private router: Router,
-    private dataSharingService: DataSharingService
+
+    private storage: Storage
   ) {}
   val1: string = '';
   val2: string = '';
   sharedData: any;
-  ngOnInit() {
-    this.sharedData = this.dataSharingService.getData();
-    console.log(this.sharedData);
+  ngOnInit() {}
+  sourceVehicle: string = '';
+  destinationVehicle: string = '';
 
-    const data = this.router.getCurrentNavigation()?.extras.state;
-    // this.val1 = data?.['value1'];
-    this.val2 = data?.['value2'];
-    console.log(this.val2);
+  sourceVehicleSelectedOption: any;
+  destinationVehicleSelectedOption: any;
+
+  async fileToBase64(file: File): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        resolve(reader.result as string);
+      };
+      reader.onerror = () => {
+        reject('Error reading file.');
+      };
+      reader.readAsDataURL(file);
+    });
   }
-  sourceVehicle: string ="";
-  destinationVehicle: string ="";
 
-  onFileSelected(index: number, event: any) {
+  async onFileSelected(index: number, event: any) {
     const file: File = event.target.files[0];
     if (file) {
+      console.log('Converting file -> ', file);
+      const base64String = await this.fileToBase64(file);
+      console.log('converted file -> ', base64String);
+      await this.storage.set(`file-${index}`, base64String);
+      console.log('saved file -> ');
       console.log(index + ' - File:', file);
     } else {
       console.log('No file selected.');
     }
   }
+  getSourceVehicleOptionText(optionValue: string): string {
+    switch (optionValue) {
+      case 'BUS':
+        return 'BUS';
+      case 'TRAIN':
+        return 'TRAIN';
+      case 'FLIGHT':
+        return 'FLIGHT';
+      default:
+        return '-';
+    }
+  }
+  async saveData() {
+    this.sourceVehicleSelectedOption = this.getSourceVehicleOptionText(
+      this.sourceVehicle
+    );
+    await this.storage.set('sourceVehicle', this.sourceVehicleSelectedOption);
+    this.destinationVehicleSelectedOption = this.getSourceVehicleOptionText(
+      this.destinationVehicle
+    );
+    await this.storage.set(
+      'destinationVehicle',
+      this.destinationVehicleSelectedOption
+    );
+  }
   navigate() {
-    const navigationExtras: NavigationExtras = {
-      state: {
-        value2: this.val2,
-        selectedOption5: this.sourceVehicle,
-        selectedOption6: this.destinationVehicle
-      },
-    };
+    this.saveData();
     this.router.navigate(['/calculation']);
   }
 }

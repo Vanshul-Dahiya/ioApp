@@ -1,11 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title style="text-align: center; font-weight: bolder;">Review Page</ion-title>
+    <ion-title style="text-align: center; font-weight: bolder"
+      >Review Page</ion-title
+    >
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <h1 class="form-heading" (click)="retrieveData()" >Basic Information</h1>
+  <h1 class="form-heading" (click)="retrieveData()">Basic Information</h1>
   <ion-card>
     <ion-card-content class="content-container">
       <div class="labels-container">
@@ -153,9 +155,7 @@
   <div class="labels-container">
     <ion-item>
       <h4>Mode of Travel onward journey :</h4>
-
-      <!-- <ion-label class="center">Service/Retired:</ion-label> -->
-      <i> <ion-label>auto fetch</ion-label> </i>
+      <i> <ion-label id="sourceVehicleFetch">auto fetch</ion-label> </i>
     </ion-item>
   </div>
   <ion-card>
@@ -164,7 +164,14 @@
         <ion-label>TicketUpload:</ion-label>
         <div class="file-upload-container">
           <ion-label class="file-upload-label"></ion-label>
-          <i> <ion-label>auto fetch</ion-label> </i>
+          <i *ngIf="!imageURL1">auto fetch</i>
+          <img
+            id="imageFetch1"
+            [src]="imageURL1"
+            width="100px"
+            height="100px"
+            alt="pic1"
+          />
         </div>
       </div>
     </ion-item>
@@ -173,7 +180,14 @@
         <ion-label>Bill Upload :</ion-label>
         <div class="file-upload-container">
           <ion-label class="file-upload-label"></ion-label>
-          <i> <ion-label>auto fetch</ion-label> </i>
+          <i *ngIf="!imageURL2">auto fetch</i>
+          <img
+            id="imageFetch2"
+            [src]="imageURL2"
+            width="100px"
+            height="100px"
+            alt="pic2"
+          />
         </div>
       </div>
     </ion-item>
@@ -182,8 +196,7 @@
   <div class="labels-container">
     <ion-item>
       <h4>Mode of Travel return journey :</h4>
-
-      <i> <ion-label>auto fetch</ion-label> </i>
+      <i> <ion-label id="destinationVehicleFetch">auto fetch</ion-label> </i>
     </ion-item>
   </div>
   <ion-card>
@@ -192,7 +205,14 @@
         <ion-label>TicketUpload:</ion-label>
         <div class="file-upload-container">
           <ion-label class="file-upload-label"></ion-label>
-          <i> <ion-label>auto fetch</ion-label> </i>
+          <i *ngIf="!imageURL3">auto fetch</i>
+          <img
+            id="imageFetch3"
+            [src]="imageURL3"
+            width="100px"
+            height="100px"
+            alt="pic3"
+          />
         </div>
       </div>
     </ion-item>
@@ -201,7 +221,14 @@
         <ion-label>Bill Upload :</ion-label>
         <div class="file-upload-container">
           <ion-label class="file-upload-label"></ion-label>
-          <i> <ion-label>auto fetch</ion-label> </i>
+          <i *ngIf="!imageURL4">auto fetch</i>
+          <img
+            id="imageFetch4"
+            [src]="imageURL4"
+            width="100px"
+            height="100px"
+            alt="pic4"
+          />
         </div>
       </div>
     </ion-item>
@@ -210,7 +237,14 @@
         <ion-label>Other Uploads :</ion-label>
         <div class="file-upload-container">
           <ion-label class="file-upload-label"></ion-label>
-          <i> <ion-label>auto fetch</ion-label> </i>
+          <i *ngIf="!imageURL5">auto fetch</i>
+          <img
+            id="imageFetch5"
+            [src]="imageURL5"
+            width="100px"
+            height="100px"
+            alt="pic5"
+          />
         </div>
       </div>
     </ion-item>
