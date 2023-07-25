@@ -6,19 +6,21 @@ import { CameraPhoto, CameraResultType, CameraSource } from '@capacitor/camera';
 import { FilesystemDirectory } from '@capacitor/filesystem';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
-const { Camera, Filesystem } = Plugins;
+import { Geolocation } from '@capacitor/geolocation';
+const { Camera, Filesystem  } = Plugins;
 
 export interface PeriodicElement {
   course: string;
   checkbox: boolean;
   selectOption: string;
   image: string | undefined;
+  geoLocation?: { latitude: number ; longitude: number };
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  { course: 'B.Pharma', checkbox: false, selectOption: '', image: undefined },
-  { course: 'M.Phil', checkbox: false, selectOption: '', image: undefined },
+  { course: 'B.Pharma', checkbox: false, selectOption: '', image: undefined ,geoLocation:undefined},
+  { course: 'M.Phil', checkbox: false, selectOption: '', image: undefined, geoLocation:undefined },
 
-  { course: 'M.Pharma', checkbox: false, selectOption: '', image: undefined },
+  { course: 'M.Pharma', checkbox: false, selectOption: '', image: undefined ,geoLocation:undefined },
 ];
 @Component({
   selector: 'app-table',
@@ -30,7 +32,8 @@ export class TablePage implements OnInit {
   selectedOption2: any;
   imageSource: any;
   form: FormGroup;
-  dataSource: PeriodicElement[] | undefined = [];
+ 
+  dataSource: PeriodicElement[] |any;
   constructor(
     private route: ActivatedRoute,
     private domSanitizer: DomSanitizer,
@@ -44,6 +47,7 @@ export class TablePage implements OnInit {
     this.getData();
     // throw new Error('Method not implemented.');
   }
+  
   async getData() {
     try {
       const data = await this.http
@@ -82,6 +86,23 @@ export class TablePage implements OnInit {
     }
     
     console.log(this.dataSource);
+    this.dataSource[index].geoLocation = this.dataSource[index].geoLocation || {};
+
+    // Get the geolocation data
+    try {
+      // Get the geolocation data
+      const position = await Geolocation.getCurrentPosition();
+      const { latitude, longitude } = position.coords;
+
+      // Ensure that this.dataSource[index].geoLocation is initialized as an object with latitude and longitude properties
+      
+
+      // Save geolocation data to the dataSource array
+      this.dataSource[index].geoLocation.latitude = latitude;
+      this.dataSource[index].geoLocation.longitude = longitude;
+    } catch (error) {
+      console.error('Error getting geolocation:', error);
+    }
   };
   
   getPhoto(index: number) {

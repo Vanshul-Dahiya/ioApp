@@ -21,6 +21,12 @@
           <ion-label>image:</ion-label>
           <img [src]="getPhoto(i)" alt="pic" style="width: 100px; height: 100px" *ngIf="data.image" />
         </ion-item>
+        <ion-item *ngIf="data.geoLocation">
+          <ion-label>GPS:</ion-label>
+          <p>Latitude: {{ data.geoLocation.latitude }}</p>
+          <p>Longitude: {{ data.geoLocation.longitude }}</p>
+        </ion-item>
+        
         <ion-item>
           <ion-label>remarks:</ion-label>
           <ion-select [(ngModel)]="data.selectOption" class="select-no-underline">
