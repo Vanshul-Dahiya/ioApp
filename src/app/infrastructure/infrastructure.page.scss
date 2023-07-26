@@ -1,0 +1,38 @@
+.claimForm-title {
+    text-align: center;
+    font-weight: bold;
+}
+.center {
+    margin-left: 5.5rem;
+}
+.land{
+    word-wrap: normal;
+    word-break: normal;
+}
+ion-col {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  ion-button {
+    --background: #007bff; /* Blue color for camera buttons */
+    color: #fff;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  ion-select {
+    width: 100%;
+  }
+  .labels-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* Add this line */
+    margin-bottom: 0.5rem;
+  }

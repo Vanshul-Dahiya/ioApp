@@ -1,11 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="claim" color="secondary">
+    <ion-title class="claimForm-title">INFRASTRUCTURE </ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content color="light">
+ 
   <ng-container *ngFor="let data of dataSource; let i = index">
     <ion-card>
+     
       <ion-list [inset]="true">
         <ion-item>
-          <ion-label>course: </ion-label>
-          <ion-label class="center">{{ data.course }}</ion-label>
+          <ion-label>issue: </ion-label>
+          <ion-label class="center">{{ data.issue }}</ion-label>
+          <!-- <ion-label ngIf='data.issue===08'>class</ion-label> -->
         </ion-item>
+        
         <ion-item>
           <ion-label>yes/no:</ion-label>
           <ion-select class="center" [(ngModel)]="data.checkbox" class="select-no-underline">
@@ -13,6 +23,12 @@
             <ion-select-option value="false">no</ion-select-option>
           </ion-select>
         </ion-item>
+       
+          <ion-item>
+            <ion-label>norms: </ion-label>
+            <ion-label class="center">{{ data.norms }}</ion-label>
+          </ion-item>
+  
         <ion-item>
           <ion-label>enclose:</ion-label>
           <ion-button (click)="takePicture(i)">Camera</ion-button>
@@ -24,13 +40,23 @@
         <ion-item>
           <ion-label>remarks:</ion-label>
           <ion-select [(ngModel)]="data.selectOption" class="select-no-underline">
-            <ion-select-option value="Option 1">Verified</ion-select-option>
-            <ion-select-option value="Option 2">Not Available</ion-select-option>
-            <ion-select-option value="Option 3">Available, Not Verified</ion-select-option>
-            <ion-select-option value="Option 4">Doubtful</ion-select-option>
+            <ion-select-option value="Shown">Shown</ion-select-option>
+            <ion-select-option value="Not Shown">Not Shown</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
     </ion-card>
+    
   </ng-container>
+  <div class="labels-container">
+    <ion-label>Total Number of Class Rooms Deficiency
+    </ion-label>
+    <ion-input></ion-input>
+  </div>
+  <div class="labels-container">
+    <ion-label>Total Number of Laboratories  Deficiency 
+
+    </ion-label>
+    <ion-input></ion-input>
+  </div>
 </ion-content>
