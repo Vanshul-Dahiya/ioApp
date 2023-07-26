@@ -8,7 +8,11 @@
         </ion-item>
         <ion-item>
           <ion-label>yes/no:</ion-label>
-          <ion-select class="center" [(ngModel)]="data.checkbox" class="select-no-underline">
+          <ion-select
+            class="center"
+            [(ngModel)]="data.checkbox"
+            class="select-no-underline"
+          >
             <ion-select-option value="true">yes</ion-select-option>
             <ion-select-option value="false">no</ion-select-option>
           </ion-select>
@@ -19,20 +23,33 @@
         </ion-item>
         <ion-item>
           <ion-label>image:</ion-label>
-          <img [src]="getPhoto(i)" alt="pic" style="width: 100px; height: 100px" *ngIf="data.image" />
+          <img
+            [src]="getPhoto(i)"
+            alt="pic"
+            style="width: 200px; height: 200px"
+            *ngIf="data.image"
+          />
         </ion-item>
         <ion-item *ngIf="data.geoLocation">
           <ion-label>GPS:</ion-label>
           <p>Latitude: {{ data.geoLocation.latitude }}</p>
           <p>Longitude: {{ data.geoLocation.longitude }}</p>
         </ion-item>
-        
+        <canvas #imageCanvas style="display: none"></canvas>
+
         <ion-item>
           <ion-label>remarks:</ion-label>
-          <ion-select [(ngModel)]="data.selectOption" class="select-no-underline">
+          <ion-select
+            [(ngModel)]="data.selectOption"
+            class="select-no-underline"
+          >
             <ion-select-option value="Option 1">Verified</ion-select-option>
-            <ion-select-option value="Option 2">Not Available</ion-select-option>
-            <ion-select-option value="Option 3">Available, Not Verified</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+            <ion-select-option value="Option 3"
+              >Available, Not Verified</ion-select-option
+            >
             <ion-select-option value="Option 4">Doubtful</ion-select-option>
           </ion-select>
         </ion-item>
