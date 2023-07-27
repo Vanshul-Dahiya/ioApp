@@ -34,5 +34,11 @@
           "status": "filled",
           "name": "Library",
           "image": "library"
+     },
+     {
+          "id": 7,
+          "status": "filled",
+          "name": "Others",
+          "image": "Others"
      }
 ]
