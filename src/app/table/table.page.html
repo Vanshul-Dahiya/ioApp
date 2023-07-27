@@ -5,6 +5,130 @@
 </ion-header>
 
 <ion-content color="light">
+  <ion-card>
+    <ion-list>
+      <ion-label> Select what the college has applied for -> </ion-label>
+      <ion-select multiple [(ngModel)]="selectedCause">
+        <ion-select-option value="new_course">
+          Introduction of new course
+        </ion-select-option>
+        <ion-select-option value="raise_admission">
+          For raise in admission
+        </ion-select-option>
+        <ion-select-option value="extension_course">
+          Extension of course
+        </ion-select-option>
+      </ion-select>
+    </ion-list>
+  </ion-card>
+  <ng-container *ngFor="let data of courseDataSource; let j = index">
+    <ion-card *ngIf="selectedCause.includes('new_course')">
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Course to be introduced: </ion-label>
+          <ion-label class="center">{{ data.course }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(j)">Camera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(j)"
+            alt="pic"
+            style="width: 200px; height: 200px"
+            *ngIf="data.image"
+          />
+        </ion-item>
+        <!-- <ion-item *ngIf="data.geoLocation">
+        <ion-label>GPS:</ion-label>
+        <p>Latitude: {{ data.geoLocation.latitude }}</p>
+        <p>Longitude: {{ data.geoLocation.longitude }}</p>
+      </ion-item> -->
+        <!-- <canvas #imageCanvas style="display: none"></canvas> -->
+
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select [(ngModel)]="data.remarks" class="select-no-underline">
+            <ion-select-option value="Option 1">Available</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </ng-container>
+  <ion-card *ngIf="selectedCause.includes('raise_admission')">
+    <ng-container *ngFor="let data of courseDataSource; let j = index">
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Raise in course: </ion-label>
+          <ion-label class="center">{{ data.course }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(j)">Camera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(j)"
+            alt="pic"
+            style="width: 200px; height: 200px"
+            *ngIf="data.image"
+          />
+        </ion-item>
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select [(ngModel)]="data.remarks" class="select-no-underline">
+            <ion-select-option value="Option 1">Available</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+  </ion-card>
+  <ion-card *ngIf="selectedCause.includes('extension_course')">
+    <ng-container *ngFor="let data of courseDataSource; let j = index">
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Extension of course: </ion-label>
+          <ion-label class="center">{{ data.course }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(j)">Camera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(j)"
+            alt="pic"
+            style="width: 200px; height: 200px"
+            *ngIf="data.image"
+          />
+        </ion-item>
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select [(ngModel)]="data.remarks" class="select-no-underline">
+            <ion-select-option value="Option 1">Available</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+  </ion-card>
+  <hr />
+  <div class="horizontal-line"></div>
+  OTHER DETAILS =>
+  <div class="horizontal-line"></div>
+  <hr />
   <ng-container *ngFor="let data of dataSource; let i = index">
     <ion-card>
       <ion-list [inset]="true">

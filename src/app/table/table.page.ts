@@ -16,6 +16,11 @@ export interface PeriodicElement {
   image: string | undefined;
   geoLocation?: { latitude: number; longitude: number };
 }
+export interface CourseElement {
+  course: string;
+  image: string | undefined;
+  remarks: string;
+}
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     course: 'B.Pharma',
@@ -48,10 +53,17 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TablePage implements OnInit {
   selectedOption: any;
   selectedOption2: any;
+  selectedCause: string[] = [];
   imageSource: any;
   form: FormGroup;
 
   dataSource: PeriodicElement[] | any;
+
+  displayedColumns: string[] = ['course', 'yesNo', 'ifYes', 'inspectorRemark'];
+
+  separateDataSource: PeriodicElement[] = [];
+  courseDataSource : CourseElement[] = [];
+  photoData: string | undefined;
   constructor(
     private route: ActivatedRoute,
     private domSanitizer: DomSanitizer,
@@ -73,16 +85,19 @@ export class TablePage implements OnInit {
         .subscribe((data) => {
           this.dataSource = data;
         });
+      const data2 = await this.http
+        .get<CourseElement[]>('../../assets/newCourse_data.json')
+        .subscribe((data) => {
+          this.courseDataSource = data;
+          console.log('data2 = ',data2);
+          console.log('courseDataSource = ',this.courseDataSource);
+        });
       // this.dataSource = data;
     } catch (error) {
       console.error('Error retrieving data:', error);
     }
   }
-  displayedColumns: string[] = ['course', 'yesNo', 'ifYes', 'inspectorRemark'];
 
-  separateDataSource: PeriodicElement[] = [];
-
-  photoData: string | undefined;
   @ViewChild('imageCanvas', { static: false }) canvas: ElementRef | any;
   private context: CanvasRenderingContext2D | any;
   takePicture = async (index: number) => {
