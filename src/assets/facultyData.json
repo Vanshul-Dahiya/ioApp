@@ -1,42 +1,26 @@
 [
     {
-        "point": "Qualifications",
+        "id": 0,
+        "name": "RAMA",
+        "designation": "Principal",
+        "qualification": "PHD",
+        "experience": "10yr",
+        "QualificationID": 2,
+        "ExperienceID": 3,
+        "attendance": "false",
         "checkbox": "false",
         "selectOption": "",
         "image": "undefined"
     },
     {
-        "point": "Experience",
-        "checkbox": "false",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "point": "Appointed",
-        "checkbox": "false",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "point": "Offer Letter",
-        "checkbox": "false",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "point": "Resume",
-        "checkbox": "false",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "point": "Consent",
-        "checkbox": "false",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "point": "Principal",
+        "id": 1,
+        "name": "Rakesh",
+        "designation": "Teacher",
+        "qualification": "B.PHARMA",
+        "experience": "2yr",
+        "QualificationID": 4,
+        "ExperienceID": 5,
+        "attendance": "true",
         "checkbox": "false",
         "selectOption": "",
         "image": "undefined"

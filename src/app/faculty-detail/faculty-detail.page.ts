@@ -10,12 +10,14 @@ import { HttpClient } from '@angular/common/http';
 const { Camera, Filesystem } = Plugins;
 
 export interface PeriodicElement {
-  name : string,
-  designation : string,
-  qualification : string,
-  experience : string,
-  attendance : boolean,
-  point : string,
+  id: number;
+  name: string;
+  designation: string;
+  qualification: string;
+  experience: string;
+  attendance: boolean;
+  QualificationID: number;
+  ExperienceID: number;
   course: string;
   checkbox: boolean;
   selectOption: string;

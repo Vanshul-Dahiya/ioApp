@@ -6,20 +6,20 @@
   </ion-toolbar>
 </ion-header>
 <ion-content color="light">
- <ng-container *ngFor="let item of dataSource">
+  <ng-container *ngFor="let item of dataSource">
     <ion-card>
       <ion-card-header style="text-align: center">
-        Faculty Details
+        Faculty Details {{item.id}}
       </ion-card-header>
       <ion-card-content>
         <ion-grid>
           <ion-row>
             <!-- Left Column for Written Content -->
             <ion-col size="9">
-              <ion-card-title>NAME : AutoFETCH</ion-card-title>
-              Designation : AutoFETCH <br />
-              Qualification : AutoFETCH <br />
-              Experience : AutoFETCH <br />
+              <ion-card-title>NAME : {{item.name}}</ion-card-title>
+              Designation :{{item.designation}} <br />
+              Qualification : {{item.qualification}} <br />
+              Experience : {{item.experience}} <br />
               Present <ion-checkbox></ion-checkbox> Absent
               <ion-checkbox></ion-checkbox>
             </ion-col>
@@ -37,42 +37,37 @@
         </ion-grid>
       </ion-card-content>
     </ion-card>
-    <ng-container *ngFor="let data of dataSource; let i = index">
+    <!-- <ng-container *ngFor=" let i = index"> -->
     <ion-card>
       <ion-list [inset]="true">
         <ion-item>
-          <ion-label>Qualifications </ion-label>
-          <ion-label class="center">{{data.point}} </ion-label>
+          <ion-label>Qualifications {{item.id}} </ion-label>
+          <ion-label class="center">AUTO FETCH </ion-label>
         </ion-item>
         <ion-item>
           <ion-label>yes/no:</ion-label>
-          <ion-select
-            class="center"
-            [(ngModel)]="data.checkbox"
-            class="select-no-underline"
-          >
+          <ion-select class="center" class="select-no-underline">
             <ion-select-option value="true">yes</ion-select-option>
             <ion-select-option value="false">no</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label>enclose:</ion-label>
-          <ion-button (click)="takePicture(i)">Camera</ion-button>
+          <ion-button (click)="takePicture(item.QualificationID)"
+            >Camera</ion-button
+          >
         </ion-item>
         <ion-item>
           <ion-label>image:</ion-label>
           <img
-            [src]="getPhoto(i)"
+            [src]="getPhoto(item.QualificationID)"
             alt="pic"
             style="width: 100px; height: 100px"
           />
         </ion-item>
         <ion-item>
           <ion-label>remarks:</ion-label>
-          <ion-select
-            [(ngModel)]="data.selectOption"
-            class="select-no-underline"
-          >
+          <ion-select class="select-no-underline">
             <ion-select-option value="Option 1">Verified</ion-select-option>
             <ion-select-option value="Option 2"
               >Not Available</ion-select-option
@@ -85,6 +80,250 @@
         </ion-item>
       </ion-list>
     </ion-card>
+    <ion-card>
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Experience {{item.id}}</ion-label>
+          <ion-label class="center">AUTO FETCH </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>yes/no:</ion-label>
+          <ion-select class="center" class="select-no-underline">
+            <ion-select-option value="true">yes</ion-select-option>
+            <ion-select-option value="false">no</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(item.ExperienceID)"
+            >Camera</ion-button
+          >
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(item.ExperienceID)"
+            alt="pic"
+            style="width: 100px; height: 100px"
+          />
+        </ion-item>
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select class="select-no-underline">
+            <ion-select-option value="Option 1">Verified</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+            <ion-select-option value="Option 3"
+              >Available, Not Verified</ion-select-option
+            >
+            <ion-select-option value="Option 4">Doubtful</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Appointed {{item.id}}</ion-label>
+          <ion-label class="center">AUTO FETCH </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>yes/no:</ion-label>
+          <ion-select class="center" class="select-no-underline">
+            <ion-select-option value="true">yes</ion-select-option>
+            <ion-select-option value="false">no</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(item.id)">Camera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(item.id)"
+            alt="pic"
+            style="width: 100px; height: 100px"
+          />
+        </ion-item>
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select class="select-no-underline">
+            <ion-select-option value="Option 1">Verified</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+            <ion-select-option value="Option 3"
+              >Available, Not Verified</ion-select-option
+            >
+            <ion-select-option value="Option 4">Doubtful</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Offer Letter {{item.id}}</ion-label>
+          <ion-label class="center">AUTO FETCH </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>yes/no:</ion-label>
+          <ion-select class="center" class="select-no-underline">
+            <ion-select-option value="true">yes</ion-select-option>
+            <ion-select-option value="false">no</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(item.id)">Camera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(item.id)"
+            alt="pic"
+            style="width: 100px; height: 100px"
+          />
+        </ion-item>
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select class="select-no-underline">
+            <ion-select-option value="Option 1">Verified</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+            <ion-select-option value="Option 3"
+              >Available, Not Verified</ion-select-option
+            >
+            <ion-select-option value="Option 4">Doubtful</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Resume {{item.id}}</ion-label>
+          <ion-label class="center">AUTO FETCH </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>yes/no:</ion-label>
+          <ion-select class="center" class="select-no-underline">
+            <ion-select-option value="true">yes</ion-select-option>
+            <ion-select-option value="false">no</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(item.id)">Camera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(item.id)"
+            alt="pic"
+            style="width: 100px; height: 100px"
+          />
+        </ion-item>
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select class="select-no-underline">
+            <ion-select-option value="Option 1">Verified</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+            <ion-select-option value="Option 3"
+              >Available, Not Verified</ion-select-option
+            >
+            <ion-select-option value="Option 4">Doubtful</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label>Consent {{item.id}}</ion-label>
+          <ion-label class="center">AUTO FETCH </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>yes/no:</ion-label>
+          <ion-select class="center" class="select-no-underline">
+            <ion-select-option value="true">yes</ion-select-option>
+            <ion-select-option value="false">no</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(item.id)">Camera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(item.id)"
+            alt="pic"
+            style="width: 100px; height: 100px"
+          />
+        </ion-item>
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select class="select-no-underline">
+            <ion-select-option value="Option 1">Verified</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+            <ion-select-option value="Option 3"
+              >Available, Not Verified</ion-select-option
+            >
+            <ion-select-option value="Option 4">Doubtful</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list [inset]="true">
+        <ion-item>
+          <ion-label style="word-wrap: break-word; word-wrap: break-word"
+            >Principal eligible as per norm {{item.id}}</ion-label
+          >
+          <ion-label class="center">AUTO FETCH </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>yes/no:</ion-label>
+          <ion-select class="center" class="select-no-underline">
+            <ion-select-option value="true">yes</ion-select-option>
+            <ion-select-option value="false">no</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>enclose:</ion-label>
+          <ion-button (click)="takePicture(item.id)">Camera</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>image:</ion-label>
+          <img
+            [src]="getPhoto(item.id)"
+            alt="pic"
+            style="width: 100px; height: 100px"
+          />
+        </ion-item>
+        <ion-item>
+          <ion-label>remarks:</ion-label>
+          <ion-select class="select-no-underline">
+            <ion-select-option value="Option 1">Verified</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+            <ion-select-option value="Option 3"
+              >Available, Not Verified</ion-select-option
+            >
+            <ion-select-option value="Option 4">Doubtful</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <!-- </ng-container> -->
   </ng-container>
-</ng-container>
 </ion-content>
