@@ -9,17 +9,13 @@ import { HttpClient } from '@angular/common/http';
 const { Camera, Filesystem } = Plugins;
 
 export interface PeriodicElement {
-  course: string;
+  issue: string;
   checkbox: boolean;
   selectOption: string;
   image:string| undefined;
+  norms:string;
+  id:string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  { course: 'B.Pharma', checkbox: false, selectOption: '', image: undefined },
-  { course: 'M.Phil', checkbox: false, selectOption: '', image: undefined },
-
-  { course: 'M.Pharma', checkbox: false, selectOption: '', image: undefined },
-];
 
 @Component({
   selector: 'app-infrastructure',
@@ -50,12 +46,8 @@ export class InfrastructurePage implements OnInit {
 
   async getData() {
     try {
-      const data = await this.http
-        .get<PeriodicElement[]>('../../assets/data.json')
-        .subscribe((data) => {
-          this.dataSource = data;
-        });
-      // this.dataSource = data;
+      const data = await this.http.get<PeriodicElement[]>('../../assets/infrastructure.json').toPromise();
+      this.dataSource = data;
     } catch (error) {
       console.error('Error retrieving data:', error);
     }
@@ -71,7 +63,7 @@ export class InfrastructurePage implements OnInit {
       quality: 90,
       allowEditing: false,
       resultType: CameraResultType.Uri,
-      source: CameraSource.Prompt,
+      source: CameraSource.Camera,
     });
   
     // this.imageSource= 'data:image/jpeg;base64,'+image.base64String;
