@@ -1,14 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="claim" color="secondary">
+    <ion-title class="claimForm-title" style="text-align: center"
+      >Faculty Details</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
 <ion-content color="light">
-  <ng-container *ngFor="let data of dataSource; let i = index">
+ <ng-container *ngFor="let item of dataSource">
+    <ion-card>
+      <ion-card-header style="text-align: center">
+        Faculty Details
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <!-- Left Column for Written Content -->
+            <ion-col size="9">
+              <ion-card-title>NAME : AutoFETCH</ion-card-title>
+              Designation : AutoFETCH <br />
+              Qualification : AutoFETCH <br />
+              Experience : AutoFETCH <br />
+              Present <ion-checkbox></ion-checkbox> Absent
+              <ion-checkbox></ion-checkbox>
+            </ion-col>
+
+            <!-- Right Column for Image -->
+            <ion-col size="3">
+              <!-- Replace the 'your-image-url.jpg' with the URL or path of your image -->
+              <img
+                src="../../assets/Pharmacy_Council_of_India_Logo 4.jpg"
+                alt="Auto Fetch Faculty Image"
+                style="width: 100%; height: auto"
+              />
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ng-container *ngFor="let data of dataSource; let i = index">
     <ion-card>
       <ion-list [inset]="true">
         <ion-item>
-          <ion-label>course: </ion-label>
-          <ion-label class="center">{{ data.course }}</ion-label>
+          <ion-label>Qualifications </ion-label>
+          <ion-label class="center">{{data.point}} </ion-label>
         </ion-item>
         <ion-item>
           <ion-label>yes/no:</ion-label>
-          <ion-select class="center" [(ngModel)]="data.checkbox" class="select-no-underline">
+          <ion-select
+            class="center"
+            [(ngModel)]="data.checkbox"
+            class="select-no-underline"
+          >
             <ion-select-option value="true">yes</ion-select-option>
             <ion-select-option value="false">no</ion-select-option>
           </ion-select>
@@ -19,18 +61,30 @@
         </ion-item>
         <ion-item>
           <ion-label>image:</ion-label>
-          <img [src]="getPhoto(i)" alt="pic" style="width: 100px; height: 100px" *ngIf="data.image" />
+          <img
+            [src]="getPhoto(i)"
+            alt="pic"
+            style="width: 100px; height: 100px"
+          />
         </ion-item>
         <ion-item>
           <ion-label>remarks:</ion-label>
-          <ion-select [(ngModel)]="data.selectOption" class="select-no-underline">
+          <ion-select
+            [(ngModel)]="data.selectOption"
+            class="select-no-underline"
+          >
             <ion-select-option value="Option 1">Verified</ion-select-option>
-            <ion-select-option value="Option 2">Not Available</ion-select-option>
-            <ion-select-option value="Option 3">Available, Not Verified</ion-select-option>
+            <ion-select-option value="Option 2"
+              >Not Available</ion-select-option
+            >
+            <ion-select-option value="Option 3"
+              >Available, Not Verified</ion-select-option
+            >
             <ion-select-option value="Option 4">Doubtful</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
     </ion-card>
   </ng-container>
+</ng-container>
 </ion-content>

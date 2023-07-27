@@ -10,17 +10,23 @@ import { HttpClient } from '@angular/common/http';
 const { Camera, Filesystem } = Plugins;
 
 export interface PeriodicElement {
+  name : string,
+  designation : string,
+  qualification : string,
+  experience : string,
+  attendance : boolean,
+  point : string,
   course: string;
   checkbox: boolean;
   selectOption: string;
   image: string | undefined;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  { course: 'B.Pharma', checkbox: false, selectOption: '', image: undefined },
-  { course: 'M.Phil', checkbox: false, selectOption: '', image: undefined },
+// const ELEMENT_DATA: PeriodicElement[] = [
+//   { point:'', course: 'B.Pharma', checkbox: false, selectOption: '', image: undefined },
+//   { point:'',  course: 'M.Phil', checkbox: false, selectOption: '', image: undefined },
 
-  { course: 'M.Pharma', checkbox: false, selectOption: '', image: undefined },
-];
+//   {  point:'', course: 'M.Pharma', checkbox: false, selectOption: '', image: undefined },
+// ];
 
 @Component({
   selector: 'app-faculty-detail',
@@ -43,60 +49,61 @@ export class FacultyDetailPage implements OnInit {
   imageSource: any;
   form: FormGroup;
   dataSource: PeriodicElement[] | undefined = [];
+  separateDataSource: PeriodicElement[] = [];
+  ngOnInit() {
+    console.log('got data');
 
-  ngOnInit(): void {
     this.getData();
     // throw new Error('Method not implemented.');
   }
   async getData() {
     try {
-      const data = await this.http
-        .get<PeriodicElement[]>('../../assets/data.json')
+      const das = await this.http
+        .get<PeriodicElement[]>('../../assets/facultyData.json')
         .subscribe((data) => {
           this.dataSource = data;
         });
-      // this.dataSource = data;
     } catch (error) {
       console.error('Error retrieving data:', error);
     }
   }
-  displayedColumns: string[] = ['course', 'yesNo', 'ifYes', 'inspectorRemark'];
-
-  separateDataSource: PeriodicElement[] = [];
 
   photoData: string | undefined;
-
   takePicture = async (index: number) => {
     const image = await Camera['getPhoto']({
       quality: 90,
       allowEditing: false,
       resultType: CameraResultType.Uri,
-      source: CameraSource.Prompt,
+      source: CameraSource.Camera,
     });
-  
+
     // this.imageSource= 'data:image/jpeg;base64,'+image.base64String;
     // console.log(this.imageSource)
     this.imageSource = this.domSanitizer.bypassSecurityTrustUrl(
       image.webPath ? image.webPath : ''
     );
-    
+
     if (this.dataSource && this.dataSource[index] && this.imageSource) {
       // Update the 'image' property of the respective element in the dataSource array
-      this.dataSource[index].image = this.imageSource['changingThisBreaksApplicationSecurity'];
+      this.dataSource[index].image =
+        this.imageSource['changingThisBreaksApplicationSecurity'];
     }
-    
+
     console.log(this.dataSource);
   };
-  
+
   getPhoto(index: number) {
-    if (this.dataSource && this.dataSource[index] && this.dataSource[index].image) {
+    if (
+      this.dataSource &&
+      this.dataSource[index] &&
+      this.dataSource[index].image
+    ) {
       return this.dataSource[index].image;
     }
-  
+
     // Add a default return statement
     return '';
   }
-
   submitTableData() {
     localStorage.setItem('tableData', JSON.stringify(this.dataSource));
   }
