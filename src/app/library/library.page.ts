@@ -9,26 +9,46 @@ import { HttpClient } from '@angular/common/http';
 import { Geolocation } from '@capacitor/geolocation';
 const { Camera, Filesystem } = Plugins;
 
+
 export interface PeriodicElement {
   course: string;
   checkbox: boolean;
   selectOption: string;
   image: string | undefined;
+  geoLocation?: { latitude: number; longitude: number };
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  { course: 'B.Pharma', checkbox: false, selectOption: '', image: undefined },
-  { course: 'M.Phil', checkbox: false, selectOption: '', image: undefined },
+  {
+    course: 'B.Pharma',
+    checkbox: false,
+    selectOption: '',
+    image: undefined,
+    geoLocation: undefined,
+  },
+  {
+    course: 'M.Phil',
+    checkbox: false,
+    selectOption: '',
+    image: undefined,
+    geoLocation: undefined,
+  },
 
-  { course: 'M.Pharma', checkbox: false, selectOption: '', image: undefined },
-];
-
+  {
+    course: 'M.Pharma',
+    checkbox: false,
+    selectOption: '',
+    image: undefined,
+    geoLocation: undefined,
+  },
+]
 @Component({
-  selector: 'app-equipment',
-  templateUrl: './equipment.page.html',
-  styleUrls: ['./equipment.page.scss'],
+  selector: 'app-library',
+  templateUrl: './library.page.html',
+  styleUrls: ['./library.page.scss'],
 })
-export class EquipmentPage implements OnInit {
- 
+export class LibraryPage implements OnInit {
+
+  
   selectedOption: any;
   selectedOption2: any;
   imageSource: any;
@@ -52,7 +72,7 @@ export class EquipmentPage implements OnInit {
   async getData() {
     try {
       const data = await this.http
-        .get<PeriodicElement[]>('../../assets/equipment.json')
+        .get<PeriodicElement[]>('../../assets/library.json')
         .subscribe((data) => {
           this.dataSource = data;
         });
@@ -161,5 +181,3 @@ export class EquipmentPage implements OnInit {
     }
   }
 }
-
-
