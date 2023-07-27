@@ -53,4 +53,8 @@ export class PendingDashboardPage implements OnInit {
     }
     console.log(`${index}`);
   }
+  boom(){
+    alert('Are aa rha h bhai , sabar kro!')
+    this.router.navigate(['/']);
+  }
 }

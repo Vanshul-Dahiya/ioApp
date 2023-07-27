@@ -1,11 +1,20 @@
 [
-    { 
-        "course": "B.Pharma", "checkbox": "false", "selectOption": "","image": "undefined"
+    {
+        "course": "B.Pharma",
+        "checkbox": "false",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "course": "M.Pharma", "checkbox": "false", "selectOption": "","image": "undefined"
+    {
+        "course": "M.Pharma",
+        "checkbox": "false",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "course": "M.Phil", "checkbox": "false", "selectOption": "","image": "undefined"
+    {
+        "course": "M.Phil",
+        "checkbox": "false",
+        "selectOption": "",
+        "image": "undefined"
     }
 ]

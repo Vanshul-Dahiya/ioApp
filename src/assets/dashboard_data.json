@@ -25,7 +25,7 @@
      },
      {
           "id": 5,
-          "status": "filled",
+          "status": "half-filled",
           "name": "Equipment",
           "image": "flask-sharp"
      },
@@ -37,8 +37,8 @@
      },
      {
           "id": 7,
-          "status": "filled",
+          "status": "empty",
           "name": "Others",
-          "image": "Others"
+          "image": "globe-outline"
      }
 ]

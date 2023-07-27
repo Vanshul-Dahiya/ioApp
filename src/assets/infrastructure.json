@@ -1,33 +1,82 @@
 [
-    { 
-        "id":"1", "issue": "Land Area as per norms", "checkbox": "false", "norms":"If Yes, Enclose Certificate",  "selectOption": "","image": "undefined"
+    {
+        "id": "1",
+        "issue": "Land Area as per norms",
+        "checkbox": "false",
+        "norms": "If Yes, Enclose Certificate",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":"2",  "issue": "Institutes building And ownership", "checkbox": "false", "norms":"If Yes Enclose approved Building Map by local govt","selectOption": "","image": "undefined"
+    {
+        "id": "2",
+        "issue": "Institutes building And ownership",
+        "checkbox": "false",
+        "norms": "If Yes Enclose approved Building Map by local govt",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":"3", "issue": "Construction cost(N/A for Govt. Institution)", "checkbox": "false", "norms":"Enclose CA Certified copy","selectOption": "","image": "undefined"
+    {
+        "id": "3",
+        "issue": "Construction cost(N/A for Govt. Institution)",
+        "checkbox": "false",
+        "norms": "Enclose CA Certified copy",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":"4",  "issue": "Is the land under mortgage/loan  (N/A for Govt. Institution)", "checkbox": "false", "norms":"If No, Enclose Certificate/declaration","selectOption": "","image": "undefined"
+    {
+        "id": "4",
+        "issue": "Is the land under mortgage/loan  (N/A for Govt. Institution)",
+        "checkbox": "false",
+        "norms": "If No, Enclose Certificate/declaration",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":"5", "issue": "other course offered in same Building ", "checkbox": "false", "norms":"If yes name of courses","selectOption": "","image": "undefined"
+    {
+        "id": "5",
+        "issue": "other course offered in same Building ",
+        "checkbox": "false",
+        "norms": "If yes name of courses",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":"6", "issue": "Is previously any institution was running on building/land", "checkbox": "false", "norms":"If yes enclose closure certificate from the concern authority.","selectOption": "","image": "undefined"
+    {
+        "id": "6",
+        "issue": "Is previously any institution was running on building/land",
+        "checkbox": "false",
+        "norms": "If yes enclose closure certificate from the concern authority.",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":"7", "issue": "Is registration of Municipality/Tehsil/Panchayat office available such as Professional tax certificate/ Shop and Establishment certificate", "checkbox": "false", "norms":"If yes enclose copy","selectOption": "","image": "undefined"
+    {
+        "id": "7",
+        "issue": "Is registration of Municipality/Tehsil/Panchayat office available such as Professional tax certificate/ Shop and Establishment certificate",
+        "checkbox": "false",
+        "norms": "If yes enclose copy",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":" 8", "issue": "Is Classrooms and laboratories are furnished", "checkbox": "false", "norms":"If yes enclose copy","selectOption": "","image": "undefined"
+    {
+        "id": " 8",
+        "issue": "Is Classrooms and laboratories are furnished",
+        "checkbox": "false",
+        "norms": "If yes enclose copy",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":" 9", "issue": "class room size ", "checkbox": "false", "norms":"If yes enclose Actual clear four angle geo tag photograph (Colored pixel.)","selectOption": "","image": "undefined"
+    {
+        "id": " 9",
+        "issue": "class room size ",
+        "checkbox": "false",
+        "norms": "If yes enclose Actual clear four angle geo tag photograph (Colored pixel.)",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "id":" 10", "issue": " Laboratory size ", "checkbox": "false", "norms":"If yes enclose Actual clear four angle geo tag photograph (Colored pixel.)","selectOption": "","image": "undefined"
+    {
+        "id": " 10",
+        "issue": " Laboratory size ",
+        "checkbox": "false",
+        "norms": "If yes enclose Actual clear four angle geo tag photograph (Colored pixel.)",
+        "selectOption": "",
+        "image": "undefined"
     }
-
 ]

@@ -1,27 +1,58 @@
 [
-    { 
-        "issue": "Is Library is available as per the norms", "checkbox": "","norms":"ENCLOSE the Appointment of librarian or CA certified bill of books ", "selectOption": "","image": "undefined"
+    {
+        "issue": "Is Library is available as per the norms",
+        "checkbox": "",
+        "norms": "ENCLOSE the Appointment of librarian or CA certified bill of books ",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "issue": "Total number of Titles available", "checkbox": "","norms":"Provide The Exact Number", "selectOption": "","image": "undefined"
+    {
+        "issue": "Total number of Titles available",
+        "checkbox": "",
+        "norms": "Provide The Exact Number",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "issue": "Total number of Volume available", "checkbox": "","norms":"Provide The Exact Number", "selectOption": "","image": "undefined"
+    {
+        "issue": "Total number of Volume available",
+        "checkbox": "",
+        "norms": "Provide The Exact Number",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "issue": "Total number of No. of  National Journals available", "checkbox": "false","norms":"Provide The Exact Number", "selectOption": "","image": "undefined"
+    {
+        "issue": "Total number of No. of  National Journals available",
+        "checkbox": "false",
+        "norms": "Provide The Exact Number",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "issue": "Auto count value in the behalf of present employees shorted by designations.", "checkbox": "false","norms":"Provide The Exact Number", "selectOption": "","image": "undefined"
+    {
+        "issue": "Auto count value in the behalf of present employees shorted by designations.",
+        "checkbox": "false",
+        "norms": "Provide The Exact Number",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "issue": "Total number of No. of International Journals available ", "checkbox": "false","norms":"Provide website domain", "selectOption": "","image": "undefined"
+    {
+        "issue": "Total number of No. of International Journals available ",
+        "checkbox": "false",
+        "norms": "Provide website domain",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "issue": "Is Computer laboratories available as per norms ", "checkbox": "false","norms":"If yes provide the bills of computer and printer", "selectOption": "","image": "undefined"
+    {
+        "issue": "Is Computer laboratories available as per norms ",
+        "checkbox": "false",
+        "norms": "If yes provide the bills of computer and printer",
+        "selectOption": "",
+        "image": "undefined"
     },
-    { 
-        "issue": " Total no. of computer available", "checkbox": "false","norms":"Give the exact number ", "selectOption": "","image": "undefined"
+    {
+        "issue": " Total no. of computer available",
+        "checkbox": "false",
+        "norms": "Give the exact number ",
+        "selectOption": "",
+        "image": "undefined"
     }
-
 ]

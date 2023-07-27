@@ -55,4 +55,7 @@ export class InspectionDashboardPage implements OnInit {
     }
     console.log(`${index}`);
   }
+  boom(){
+    alert('Are aa rha h bhai , sabar kro!')
+  }
 }
