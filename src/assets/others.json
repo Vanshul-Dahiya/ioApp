@@ -1,14 +1,14 @@
 [
     {
         "issue": "Is Social Pharmacy laboratories maintained as per New regulations",
-        "checkbox": "false",
+        "checkbox": false,
         "norms": "If yes enclose four angle geo tag Actual clear photograph (Color pixel.) of the lab.",
         "selectOption": "",
         "image": "undefined"
     },
     {
         "issue": "Latest Electricity Bill and Telephone Bill",
-        "checkbox": "false",
+        "checkbox": false,
         "norms": "Enclose copy ",
         "selectOption": "",
         "image": "undefined"

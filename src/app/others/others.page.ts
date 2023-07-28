@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Capacitor, Plugins } from '@capacitor/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { CameraPhoto, CameraResultType, CameraSource } from '@capacitor/camera';
 import { FilesystemDirectory } from '@capacitor/filesystem';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -19,30 +19,7 @@ export interface PeriodicElement {
   image: string | undefined;
   geoLocation?: { latitude: number; longitude: number };
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    issue: 'B.Pharma',
-    checkbox: false,
-    selectOption: '',
-    image: undefined,
-    geoLocation: undefined,
-  },
-  {
-     issue: 'M.Phil',
-    checkbox: false,
-    selectOption: '',
-    image: undefined,
-    geoLocation: undefined,
-  },
 
-  {
-    issue: 'M.Pharma',
-    checkbox: false,
-    selectOption: '',
-    image: undefined,
-    geoLocation: undefined,
-  },
-]
 @Component({
   selector: 'app-others',
   templateUrl: './others.page.html',
@@ -56,23 +33,19 @@ export class OthersPage implements OnInit {
   form: FormGroup;
 
   dataSource: PeriodicElement[] | any;
+ 
   constructor(
     private route: ActivatedRoute,
     private domSanitizer: DomSanitizer,
     private http: HttpClient,
     private formBuilder: FormBuilder,
   ) {
-    // this.form = new FormGroup({
-    //   image: new FormControl(''),
-    // });
     this.form = this.formBuilder.group({
-      deficiency: ['', [Validators.required]],
-      checkbox: [false, [Validators.required]], // Set default value to false
-      selectOption: ['', [Validators.required]],
+      deficiency: ['', Validators.required],
+      checkbox: [null, Validators.required], // Set default value to 'false'
+      selectOption: [null, Validators.required], // Set default value to null
       // image: ['', Validators.required],
     });
-      
-  
   }
   ngOnInit(): void {
     this.getData();
@@ -81,17 +54,26 @@ export class OthersPage implements OnInit {
 
   async getData() {
     try {
-      const data = await this.http
-        .get<PeriodicElement[]>('../../assets/others.json')
-        .subscribe((data) => {
-          this.dataSource = data;
+      const data = await this.http.get<PeriodicElement[]>('../../assets/others.json').toPromise();
+      this.dataSource = data;
+
+      // Create form groups for each card item
+      this.dataSource.forEach((item: PeriodicElement) => {
+        const formGroup = this.formBuilder.group({
+          checkbox: [item.checkbox, Validators.required],
+          selectOption: ['', Validators.required],
+          image: ['', Validators.required],
         });
-      // this.dataSource = data;
+        this.cardItems.push(formGroup);
+      });
     } catch (error) {
       console.error('Error retrieving data:', error);
     }
   }
-  displayedColumns: string[] = ['course', 'yesNo', 'ifYes', 'inspectorRemark'];
+  get cardItems() {
+    return this.form.get('cardItems') as FormArray;
+  }
+
 
   separateDataSource: PeriodicElement[] = [];
 
@@ -173,33 +155,20 @@ export class OthersPage implements OnInit {
     return '';
   }
 
-  // updateCheckboxValue(event: Event, index: number) {
-  //   const target = event.target as HTMLInputElement;
-  //   this.dataSource[index].checkbox = target.checked ;
-  //   // this.dataSource[index].checkbox = checked;
-  // }
-
-  submitTableData() {
-    localStorage.setItem('tableData', JSON.stringify(this.dataSource));
-  }
-  getTableData() {
-    const storedData = localStorage.getItem('tableData');
-    if (storedData) {
-      const retrievedData = JSON.parse(storedData);
-      this.separateDataSource = retrievedData;
-      console.log(storedData);
-    }
-  }
-  submitForm() {
+  async submitForm() {
     console.log('Btn clicked');
     if (this.form.valid) {
-      // Form is valid, handle form submission here
       const formData = this.form.value;
       console.log(formData);
       // Add your logic to perform actions with formData...
     } else {
       // Form is invalid, display error messages or handle as needed
-    console.log('else ');
+      console.log('Form is invalid');
+      // Log validation status for each card item
+      this.cardItems.controls.forEach((control, index) => {
+        console.log(`Card Item ${index + 1} Valid: ${control.valid}`);
+        console.log(`Card Item ${index + 1} Errors:`, control.errors);
+      });
     }
   }
 }
