@@ -1,70 +1,79 @@
-<ion-header [translucent]="true">
-  <ion-toolbar class="claim" color="secondary">
-    <ion-title class="claimForm-title">Others</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content color="light">
-  <ng-container *ngFor="let data of dataSource; let i = index">
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <ng-container *ngFor="let data of dataSource; let i = index">
+      <ion-card>
+        <ion-list [inset]="true">
+          <ion-item>
+            <ion-label>Issue: </ion-label>
+            <ion-label
+              class="center"
+              style="word-wrap: break-word; word-break: break-all"
+              >{{ data.issue }}</ion-label
+            >
+          </ion-item>
+          <ion-item>
+            <ion-label>yes/no:</ion-label>
+            <ion-select
+              class="center"
+              
+              class="select-no-underline"
+              formControlName="checkbox"
+            >
+              <ion-select-option value="true">yes</ion-select-option>
+              <ion-select-option value="false">no</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>norms: </ion-label>
+            <ion-label class="center">{{ data.norms }}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>enclose:</ion-label>
+            <ion-button (click)="takePicture(i)">Camera</ion-button>
+          </ion-item>
+          <ion-item>
+            <ion-label>image:</ion-label>
+            <img
+              [src]="getPhoto(i)"
+              alt="pic"
+              style="width: 200px; height: 200px"
+              *ngIf="data.image"
+            />
+          </ion-item>
+          <ion-item *ngIf="data.geoLocation">
+            <ion-label>GPS:</ion-label>
+            <p>Latitude: {{ data.geoLocation.latitude }}</p>
+            <p>Longitude: {{ data.geoLocation.longitude }}</p>
+          </ion-item>
+          <canvas #imageCanvas style="display: none"></canvas>
+
+          <ion-item>
+            <ion-label>remarks:</ion-label>
+            <ion-select
+              formControlName="selectOption"
+              class="select-no-underline"
+              required
+            >
+              <ion-select-option value="Shown">Shown</ion-select-option>
+              <ion-select-option value="Not Shown">Not Shown</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </ng-container>
     <ion-card>
-      <ion-list [inset]="true">
-        <ion-item>
-          <ion-label>Issue: </ion-label>
-          <ion-label
-            class="center"
-            style="word-wrap: break-word; word-break: break-all"
-            >{{ data.issue}}</ion-label
-          >
-        </ion-item>
-        <ion-item>
-          <ion-label>yes/no:</ion-label>
-          <ion-select
-            class="center"
-            [(ngModel)]="data.checkbox"
-            class="select-no-underline"
-          >
-            <ion-select-option value="true">yes</ion-select-option>
-            <ion-select-option value="false">no</ion-select-option>
-          </ion-select>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>norms: </ion-label>
-          <ion-label class="center">{{ data.norms }}</ion-label>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>enclose:</ion-label>
-          <ion-button (click)="takePicture(i)">Camera</ion-button>
-        </ion-item>
-        <ion-item>
-          <ion-label>image:</ion-label>
-          <img
-            [src]="getPhoto(i)"
-            alt="pic"
-            style="width: 200px; height: 200px"
-            *ngIf="data.image"
-          />
-        </ion-item>
-        <ion-item *ngIf="data.geoLocation">
-          <ion-label>GPS:</ion-label>
-          <p>Latitude: {{ data.geoLocation.latitude }}</p>
-          <p>Longitude: {{ data.geoLocation.longitude }}</p>
-        </ion-item>
-        <canvas #imageCanvas style="display: none"></canvas>
-
-        <ion-item>
-          <ion-label>remarks:</ion-label>
-          <ion-select
-            [(ngModel)]="data.selectOption"
-            class="select-no-underline"
-          >
-            <ion-select-option value="Shown">Shown</ion-select-option>
-            <ion-select-option value="Not Shown">Not Shown</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
+      <div class="labels-container">
+        <ion-label> Deficiency
+        </ion-label>
+        <ion-input formControlName="deficiency"></ion-input>
+      </div>
     </ion-card>
-  </ng-container>
-  <ion-button>Submit </ion-button>
+    <ion-button type="submit" >
+      Submit
+    </ion-button>
+  </form>
 </ion-content>

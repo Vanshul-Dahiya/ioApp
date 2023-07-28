@@ -18,6 +18,7 @@
             class="center"
             [(ngModel)]="data.checkbox"
             class="select-no-underline"
+            required 
           >
             <ion-select-option value="true">available</ion-select-option>
             <ion-select-option value="false">not Available</ion-select-option>
@@ -30,7 +31,7 @@
 
         <ion-item>
           <ion-label>enclose:</ion-label>
-          <ion-button (click)="takePicture(i)">Camera</ion-button>
+          <ion-button (click)="takePicture(i)"  required >Camera</ion-button>
         </ion-item>
         <ion-item>
           <ion-label>image:</ion-label>
@@ -53,6 +54,7 @@
           <ion-select
             [(ngModel)]="data.selectOption"
             class="select-no-underline"
+            required 
           >
             <ion-select-option value="Option 1">Shown</ion-select-option>
             <ion-select-option value="Option 2"
@@ -72,5 +74,5 @@
     <ion-input></ion-input>
   </div>
 </ion-card>
-<ion-button >Submit </ion-button>
+<ion-button  >Submit </ion-button>
 </ion-content>

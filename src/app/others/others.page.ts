@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Capacitor, Plugins } from '@capacitor/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { CameraPhoto, CameraResultType, CameraSource } from '@capacitor/camera';
 import { FilesystemDirectory } from '@capacitor/filesystem';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -13,7 +13,7 @@ const { Camera, Filesystem } = Plugins;
 
 
 export interface PeriodicElement {
-  course: string;
+  issue: string;
   checkbox: boolean;
   selectOption: string;
   image: string | undefined;
@@ -21,14 +21,14 @@ export interface PeriodicElement {
 }
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    course: 'B.Pharma',
+    issue: 'B.Pharma',
     checkbox: false,
     selectOption: '',
     image: undefined,
     geoLocation: undefined,
   },
   {
-    course: 'M.Phil',
+     issue: 'M.Phil',
     checkbox: false,
     selectOption: '',
     image: undefined,
@@ -36,7 +36,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
 
   {
-    course: 'M.Pharma',
+    issue: 'M.Pharma',
     checkbox: false,
     selectOption: '',
     image: undefined,
@@ -59,11 +59,20 @@ export class OthersPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private domSanitizer: DomSanitizer,
-    private http: HttpClient
+    private http: HttpClient,
+    private formBuilder: FormBuilder,
   ) {
-    this.form = new FormGroup({
-      image: new FormControl(''),
+    // this.form = new FormGroup({
+    //   image: new FormControl(''),
+    // });
+    this.form = this.formBuilder.group({
+      deficiency: ['', [Validators.required]],
+      checkbox: [false, [Validators.required]], // Set default value to false
+      selectOption: ['', [Validators.required]],
+      // image: ['', Validators.required],
     });
+      
+  
   }
   ngOnInit(): void {
     this.getData();
@@ -179,6 +188,18 @@ export class OthersPage implements OnInit {
       const retrievedData = JSON.parse(storedData);
       this.separateDataSource = retrievedData;
       console.log(storedData);
+    }
+  }
+  submitForm() {
+    console.log('Btn clicked');
+    if (this.form.valid) {
+      // Form is valid, handle form submission here
+      const formData = this.form.value;
+      console.log(formData);
+      // Add your logic to perform actions with formData...
+    } else {
+      // Form is invalid, display error messages or handle as needed
+    console.log('else ');
     }
   }
 }

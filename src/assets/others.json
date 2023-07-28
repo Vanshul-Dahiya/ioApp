@@ -12,47 +12,6 @@
         "norms": "Enclose copy ",
         "selectOption": "",
         "image": "undefined"
-    },
-    {
-        "issue": "GSTR 3B",
-        "checkbox": "false",
-        "norms": "Enclose Latest return’s copy",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "issue": "Employees detail",
-        "checkbox": "false",
-        "norms": "Only Present Employee yes by inspector will show here",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "issue": "Auto count value in the behalf of present employees shorted by designations.",
-        "checkbox": "false",
-        "norms": "Provide total number of employees, Name of the employees and designations of the employees",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "issue": "College website",
-        "checkbox": "false",
-        "norms": "Provide website domain",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "issue": "Contact Details",
-        "checkbox": "false",
-        "norms": "Provide official email ID and contact number",
-        "selectOption": "",
-        "image": "undefined"
-    },
-    {
-        "issue": "Deficiency",
-        "checkbox": "false",
-        "norms": "Select 36-41 Option through dropdown",
-        "selectOption": "",
-        "image": "undefined"
     }
+   
 ]

@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePage } from './home/home.page';
 import { DashboardPage } from './dashboard/dashboard.page';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OthersPage } from './others/others.page';
 
 @NgModule({
   declarations: [AppComponent, HomePage, DashboardPage],
@@ -19,7 +20,9 @@ import { DashboardPage } from './dashboard/dashboard.page';
     AppRoutingModule,
     IonicStorageModule.forRoot(),
     HttpClientModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   providers: [
